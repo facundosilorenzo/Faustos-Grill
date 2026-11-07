@@ -42,7 +42,7 @@ Valida que el día no sea lunes (cerrado) ni una fecha pasada, y que la hora est
 
 ## Pendiente (contenido real)
 
-- [ ] Carta y precios reales (los actuales son de ejemplo)
+- [ ] Precio en pitufo de la tostada Catalana (en la carta impresa está corregido a mano)
 - [ ] Fotos de los platos y del local
 - [ ] Clave de Google y Place ID para las reseñas
 - [ ] WhatsApp, email e Instagram (opcionales)

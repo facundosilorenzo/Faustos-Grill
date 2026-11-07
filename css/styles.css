@@ -565,3 +565,39 @@ button.photo img { transition: transform 600ms var(--ease-out), filter var(--t-s
 
 /* Sin foto de portada: deja respirar el resplandor de la brasa */
 .hero:has(.hero__media img.is-missing) .hero__shade { opacity: 0.45; }
+
+/* ---------- Carta: bloques, tablas de precios y promociones ---------- */
+.menu__panel-note { color: var(--ink-soft); margin-top: calc(var(--s-5) * -1); }
+.menu__block { display: grid; gap: var(--s-2); }
+.menu__block-title {
+  font-size: var(--step-2); padding-bottom: var(--s-2);
+  border-bottom: 2px solid var(--ink);
+}
+.menu__block-note { color: var(--ink-soft); font-size: var(--step--1); margin-top: var(--s-2); }
+
+.price-table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums lining-nums; }
+.price-table thead th {
+  font: 600 0.72rem/1.2 var(--font-body); letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--ink-soft); text-align: right; padding: var(--s-3) 0 var(--s-2) var(--s-3);
+  white-space: nowrap;
+}
+.price-table tbody th { text-align: left; font-weight: 400; padding: var(--s-3) 0; }
+.price-table tbody th .dish__name { display: block; }
+.price-table tbody th .dish__desc { display: block; margin-top: var(--s-1); }
+.price-table td {
+  text-align: right; vertical-align: top; white-space: nowrap; font-weight: 600;
+  padding: calc(var(--s-3) + 0.2em) 0 var(--s-3) var(--s-3); width: 5.5rem;
+}
+.price-table tbody tr { border-bottom: 1px dashed var(--rule); }
+.price-table td.price-table__ask { font-weight: 400; font-style: italic; color: var(--ink-soft); font-size: var(--step--1); }
+@media (max-width: 36rem) {
+  .price-table td { width: 4.4rem; padding-left: var(--s-2); }
+  .price-table thead th { padding-left: var(--s-2); }
+}
+@media (min-width: 52rem) {
+  .menu__panel:has(> .menu__block .price-table) .price-table { max-width: 46rem; }
+}
+
+.menu__promo { margin-top: var(--s-4); padding: var(--s-5); background: var(--paper-deep); border-radius: var(--radius); }
+.menu__promo .menu__block-title { border-bottom-color: var(--ember); }
+.menu__promo .dish:last-child { border-bottom: 0; }

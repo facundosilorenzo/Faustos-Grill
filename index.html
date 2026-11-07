@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Fausto's Grill · Carnes a la brasa en Málaga</title>
-  <meta name="description" content="Fausto's Grill: carnes a la brasa, desayunos y cocina non-stop de martes a domingo, de 9:00 a 23:30. Calle Victoria 86, Málaga. Reservas al 952 00 62 61.">
+  <title>Fausto's Tapas &amp; Grill · Carnes premium argentinas en Málaga</title>
+  <meta name="description" content="Fausto's Tapas &amp; Grill: carnes premium argentinas a la parrilla, tapas, desayunos y cocina non-stop de martes a domingo, de 9:00 a 23:30. Calle Victoria 86, Málaga. Reservas al 952 00 62 61.">
   <meta name="theme-color" content="#16110e">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 
@@ -26,7 +26,7 @@
     "@context": "https://schema.org",
     "@type": "Restaurant",
     "name": "Fausto's Grill",
-    "servesCuisine": ["Carnes a la brasa", "Parrilla"],
+    "servesCuisine": ["Parrilla argentina", "Tapas"],
     "telephone": "+34952006261",
     "priceRange": "€€",
     "address": {
@@ -98,7 +98,7 @@
           <span class="sear" style="--i:0">A la brasa,</span>
           <span class="sear" style="--i:1"><em>sin prisas.</em></span>
         </h1>
-        <p class="hero__lede">Cortes seleccionados, verduras al carbón y cocina abierta sin parar de martes a domingo, en pleno barrio de la Victoria.</p>
+        <p class="hero__lede">Carnes premium argentinas a la parrilla, tapas y cocina abierta sin parar de martes a domingo, en pleno barrio de la Victoria.</p>
         <div class="hero__actions">
           <a class="btn btn--ember" href="#contacto">Reservar mesa</a>
           <a class="btn btn--ghost" href="#carta">Ver la carta</a>
@@ -115,201 +115,591 @@
     </section>
 
     <!-- ============ Carta ============
-         PENDIENTE: platos y precios de ejemplo. Sustituir por la carta real. -->
+         Generada a partir de la carta impresa (noviembre 2026). -->
     <section class="section" id="carta" aria-labelledby="carta-title">
       <div class="wrap">
         <div class="section__head">
           <h2 id="carta-title">La carta</h2>
-          <p>Desayunamos desde las nueve y la brasa no se apaga hasta el cierre. Pregúntanos por los cortes fuera de carta: cambian según lo que llega cada semana.</p>
+          <p>Carnes premium argentinas a la brasa, tapas, cocina casera y desayunos. Todos los precios llevan IVA incluido.</p>
         </div>
 
         <div class="menu">
           <div class="menu__tabs" role="tablist" aria-label="Secciones de la carta">
-            <button class="menu__tab" role="tab" id="tab-brasa" aria-controls="panel-brasa" aria-selected="true">A la brasa</button>
-            <button class="menu__tab" role="tab" id="tab-entrantes" aria-controls="panel-entrantes" aria-selected="false" tabindex="-1">Entrantes</button>
-            <button class="menu__tab" role="tab" id="tab-guarniciones" aria-controls="panel-guarniciones" aria-selected="false" tabindex="-1">Guarniciones</button>
-            <button class="menu__tab" role="tab" id="tab-desayunos" aria-controls="panel-desayunos" aria-selected="false" tabindex="-1">Desayunos</button>
+            <button class="menu__tab" role="tab" id="tab-parrilla" aria-controls="panel-parrilla" aria-selected="true">Parrilla</button>
+            <button class="menu__tab" role="tab" id="tab-tapas" aria-controls="panel-tapas" aria-selected="false" tabindex="-1">Tapas</button>
+            <button class="menu__tab" role="tab" id="tab-cocina" aria-controls="panel-cocina" aria-selected="false" tabindex="-1">Cocina</button>
+            <button class="menu__tab" role="tab" id="tab-pizzas" aria-controls="panel-pizzas" aria-selected="false" tabindex="-1">Pizzas</button>
+            <button class="menu__tab" role="tab" id="tab-ensaladas" aria-controls="panel-ensaladas" aria-selected="false" tabindex="-1">Ensaladas</button>
+            <button class="menu__tab" role="tab" id="tab-infantil" aria-controls="panel-infantil" aria-selected="false" tabindex="-1">Infantil</button>
             <button class="menu__tab" role="tab" id="tab-postres" aria-controls="panel-postres" aria-selected="false" tabindex="-1">Postres</button>
+            <button class="menu__tab" role="tab" id="tab-desayunos" aria-controls="panel-desayunos" aria-selected="false" tabindex="-1">Desayunos</button>
             <button class="menu__tab" role="tab" id="tab-bebidas" aria-controls="panel-bebidas" aria-selected="false" tabindex="-1">Bebidas</button>
+            <button class="menu__tab" role="tab" id="tab-vinos" aria-controls="panel-vinos" aria-selected="false" tabindex="-1">Vinos</button>
             <span class="menu__indicator" aria-hidden="true"></span>
           </div>
 
-          <div class="menu__panel" role="tabpanel" id="panel-brasa" aria-labelledby="tab-brasa" tabindex="0">
-            <h3 class="menu__panel-title">A la brasa</h3>
-            <div class="menu__layout">
-              <div>
-                <article class="dish">
-                  <div class="dish__line"><h4 class="dish__name">Entrecot de vaca madurada<span class="dish__tag">Casa</span></h4><span class="dish__leader"></span><span class="dish__price">24,50 €</span></div>
-                  <p class="dish__desc">350 g, madurada 30 días. Con sal en escamas y chimichurri.</p>
-                </article>
-                <article class="dish">
-                  <div class="dish__line"><h4 class="dish__name">Chuletón para compartir</h4><span class="dish__leader"></span><span class="dish__price">58,00 €/kg</span></div>
-                  <p class="dish__desc">Vaca rubia gallega, al punto que pidas. Se sirve trinchado.</p>
-                </article>
-                <article class="dish">
-                  <div class="dish__line"><h4 class="dish__name">Asado de tira</h4><span class="dish__leader"></span><span class="dish__price">19,00 €</span></div>
-                  <p class="dish__desc">Costilla de ternera cortada fina, brasa lenta y fuerte al final.</p>
-                </article>
-                <article class="dish">
-                  <div class="dish__line"><h4 class="dish__name">Secreto ibérico</h4><span class="dish__leader"></span><span class="dish__price">17,50 €</span></div>
-                  <p class="dish__desc">Con pimientos asados y sal de romero.</p>
-                </article>
+          <div class="menu__panel" role="tabpanel" id="panel-parrilla" aria-labelledby="tab-parrilla" tabindex="0">
+            <h3 class="menu__panel-title">Nuestra parrilla</h3>
+            <div class="menu__block">
+              <p class="menu__block-note">Las carnes se sirven con guarnición: patatas fritas o ensalada.</p>
+              <div class="menu__layout">
+                <div>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Ojo de bife</h4><span class="dish__leader"></span><span class="dish__price">29,00 €</span></div>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Bife de chorizo</h4><span class="dish__leader"></span><span class="dish__price">29,00 €</span></div>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Vacío</h4><span class="dish__leader"></span><span class="dish__price">29,00 €</span></div>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Entraña</h4><span class="dish__leader"></span><span class="dish__price">29,00 €</span></div>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Solomillo</h4><span class="dish__leader"></span><span class="dish__price">35,00 €</span></div>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Secreto ibérico</h4><span class="dish__leader"></span><span class="dish__price">26,00 €</span></div>
+                  </article>
+                </div>
+                <div>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Chuletas de cordero lechal</h4><span class="dish__leader"></span><span class="dish__price">26,00 €</span></div>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Mollejas de ternera</h4><span class="dish__leader"></span><span class="dish__price">13,00 €</span></div>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Provoleta parrilla</h4><span class="dish__leader"></span><span class="dish__price">9,00 €</span></div>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Provoleta de la casa</h4><span class="dish__leader"></span><span class="dish__price">11,00 €</span></div>
+                    <p class="dish__desc">Con tomate y rúcula</p>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Chorizo criollo</h4><span class="dish__leader"></span><span class="dish__price">3,50 €</span></div>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Morcilla criolla</h4><span class="dish__leader"></span><span class="dish__price">3,50 €</span></div>
+                  </article>
+                </div>
               </div>
-              <div>
-                <article class="dish">
-                  <div class="dish__line"><h4 class="dish__name">Parrillada Fausto’s (2 pers.)</h4><span class="dish__leader"></span><span class="dish__price">46,00 €</span></div>
-                  <p class="dish__desc">Entraña, chorizo criollo, morcilla, secreto y pollo de corral, con dos guarniciones.</p>
-                </article>
-                <article class="dish">
-                  <div class="dish__line"><h4 class="dish__name">Entraña</h4><span class="dish__leader"></span><span class="dish__price">18,50 €</span></div>
-                  <p class="dish__desc">Jugosa y con mucho sabor. Recomendamos al punto.</p>
-                </article>
-                <article class="dish">
-                  <div class="dish__line"><h4 class="dish__name">Hamburguesa de la casa</h4><span class="dish__leader"></span><span class="dish__price">14,00 €</span></div>
-                  <p class="dish__desc">200 g de vaca picada a diario, cheddar curado, cebolla a la brasa y patatas.</p>
-                </article>
-                <article class="dish">
-                  <div class="dish__line"><h4 class="dish__name">Lubina a la brasa</h4><span class="dish__leader"></span><span class="dish__price">21,00 €</span></div>
-                  <p class="dish__desc">Abierta a la espalda, con ajada y verduras de temporada.</p>
-                </article>
+            </div>
+            <div class="menu__block menu__promo">
+              <h4 class="menu__block-title">Parrilladas para compartir</h4>
+              <div class="menu__layout">
+                <div>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Para 2 personas</h4><span class="dish__leader"></span><span class="dish__price">65,00 €</span></div>
+                    <p class="dish__desc">2 cortes de carne, 1 morcilla, 1 chorizo, patatas fritas y ensalada mixta.</p>
+                  </article>
+                </div>
+                <div>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Para 4 personas</h4><span class="dish__leader"></span><span class="dish__price">115,00 €</span></div>
+                    <p class="dish__desc">3 cortes de carne, 2 morcillas, 2 chorizos, 1 provoleta, patatas fritas y ensalada mixta.</p>
+                  </article>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="menu__panel" role="tabpanel" id="panel-entrantes" aria-labelledby="tab-entrantes" tabindex="0">
-            <h3 class="menu__panel-title">Entrantes</h3>
-            <div class="menu__layout">
-              <div>
-                <article class="dish">
-                  <div class="dish__line"><h4 class="dish__name">Provoleta a la brasa</h4><span class="dish__leader"></span><span class="dish__price">9,50 €</span></div>
-                  <p class="dish__desc">Con orégano, tomate asado y aceite de guindilla.</p>
-                </article>
-                <article class="dish">
-                  <div class="dish__line"><h4 class="dish__name">Empanadas criollas (2 uds.)</h4><span class="dish__leader"></span><span class="dish__price">7,00 €</span></div>
-                  <p class="dish__desc">De carne cortada a cuchillo, horneadas al momento.</p>
-                </article>
-                <article class="dish">
-                  <div class="dish__line"><h4 class="dish__name">Chorizo y morcilla</h4><span class="dish__leader"></span><span class="dish__price">8,50 €</span></div>
-                  <p class="dish__desc">Con pan de la casa y chimichurri.</p>
-                </article>
-              </div>
-              <div>
-                <article class="dish">
-                  <div class="dish__line"><h4 class="dish__name">Ensalada de tomate de temporada</h4><span class="dish__leader"></span><span class="dish__price">8,00 €</span></div>
-                  <p class="dish__desc">Tomate, cebolleta, aceite de oliva virgen extra y sal en escamas.</p>
-                </article>
-                <article class="dish">
-                  <div class="dish__line"><h4 class="dish__name">Mollejas crujientes</h4><span class="dish__leader"></span><span class="dish__price">13,50 €</span></div>
-                  <p class="dish__desc">Terminadas a la brasa, con limón.</p>
-                </article>
-                <article class="dish">
-                  <div class="dish__line"><h4 class="dish__name">Croquetas de rabo de toro (6 uds.)</h4><span class="dish__leader"></span><span class="dish__price">9,00 €</span></div>
-                  <p class="dish__desc">Cremosas por dentro, finas por fuera.</p>
-                </article>
+          <div class="menu__panel" role="tabpanel" id="panel-tapas" aria-labelledby="tab-tapas" tabindex="0">
+            <h3 class="menu__panel-title">Tapas y entrantes</h3>
+            <div class="menu__block">
+              <table class="price-table" style="--cols:3">
+                <thead><tr><th scope="col"><span class="visually-hidden">Plato</span></th><th scope="col">Tapa</th><th scope="col">½ ración</th><th scope="col">Ración</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row"><span class="dish__name">Ensaladilla rusa</span></th><td>4,00 €</td><td>8,00 €</td><td>12,00 €</td></tr>
+                  <tr><th scope="row"><span class="dish__name">Patatas bravas</span></th><td>4,00 €</td><td>8,00 €</td><td>12,00 €</td></tr>
+                  <tr><th scope="row"><span class="dish__name">Pimientos de Padrón</span></th><td>–</td><td>8,00 €</td><td>12,00 €</td></tr>
+                  <tr><th scope="row"><span class="dish__name">Boquerones en vinagre</span></th><td>4,00 €</td><td>8,00 €</td><td>12,00 €</td></tr>
+                  <tr><th scope="row"><span class="dish__name">Croquetas de jamón</span></th><td>4,00 €</td><td>8,00 €</td><td>16,00 €</td></tr>
+                  <tr><th scope="row"><span class="dish__name">Huevos rotos con jamón</span></th><td>–</td><td>–</td><td>12,00 €</td></tr>
+                  <tr><th scope="row"><span class="dish__name">Gambas pil pil</span></th><td>–</td><td>–</td><td>14,00 €</td></tr>
+                  <tr><th scope="row"><span class="dish__name">Queso manchego</span></th><td>–</td><td>8,00 €</td><td>14,00 €</td></tr>
+                  <tr><th scope="row"><span class="dish__name">Tomates aliñados con atún</span></th><td>–</td><td>–</td><td>12,00 €</td></tr>
+                  <tr><th scope="row"><span class="dish__name">Calamares fritos</span></th><td>–</td><td>–</td><td>15,00 €</td></tr>
+                  <tr><th scope="row"><span class="dish__name">Puntillitas fritas</span></th><td>–</td><td>–</td><td>13,00 €</td></tr>
+                  <tr><th scope="row"><span class="dish__name">Berenjenas fritas con miel</span></th><td>–</td><td>–</td><td>12,00 €</td></tr>
+                  <tr><th scope="row"><span class="dish__name">Papas aliñás</span></th><td>–</td><td>8,00 €</td><td>12,00 €</td></tr>
+                  <tr><th scope="row"><span class="dish__name">Albóndigas de ternera con arroz en salsa de tomate</span></th><td>–</td><td>9,00 €</td><td>14,00 €</td></tr>
+                  <tr><th scope="row"><span class="dish__name">Porra antequerana con tomate, huevo y jamón</span></th><td>4,50 €</td><td>9,00 €</td><td>–</td></tr>
+                  <tr><th scope="row"><span class="dish__name">Empanadas</span><span class="dish__desc">Carne; cebolla y queso; espinaca y queso; jamón y queso; pollo.</span></th><td>3,50 €</td><td>–</td><td>–</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="menu__panel" role="tabpanel" id="panel-cocina" aria-labelledby="tab-cocina" tabindex="0">
+            <h3 class="menu__panel-title">Nuestra cocina</h3>
+            <div class="menu__block">
+              <div class="menu__layout">
+                <div>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Milanesa de ternera</h4><span class="dish__leader"></span><span class="dish__price">20,00 €</span></div>
+                    <p class="dish__desc">Con patatas y ensalada.</p>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Milanesa napolitana</h4><span class="dish__leader"></span><span class="dish__price">22,00 €</span></div>
+                    <p class="dish__desc">Con mozzarella fundida y salsa de tomate, patatas y ensalada.</p>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Suprema de pollo</h4><span class="dish__leader"></span><span class="dish__price">20,00 €</span></div>
+                    <p class="dish__desc">Pechuga empanada con patatas y ensalada.</p>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Suprema de pollo napolitana</h4><span class="dish__leader"></span><span class="dish__price">22,00 €</span></div>
+                    <p class="dish__desc">Con mozzarella fundida y salsa de tomate, patatas y ensalada.</p>
+                  </article>
+                </div>
+                <div>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Canelones de verdura</h4><span class="dish__leader"></span><span class="dish__price">20,00 €</span></div>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Sorrentinos de jamón y mozzarella</h4><span class="dish__leader"></span><span class="dish__price">18,00 €</span></div>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Flamenquín</h4><span class="dish__leader"></span><span class="dish__price">16,00 €</span></div>
+                    <p class="dish__desc">Relleno de jamón serrano, con patatas.</p>
+                  </article>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="menu__panel" role="tabpanel" id="panel-guarniciones" aria-labelledby="tab-guarniciones" tabindex="0">
-            <h3 class="menu__panel-title">Guarniciones</h3>
-            <div class="menu__layout">
-              <div>
-                <article class="dish">
-                  <div class="dish__line"><h4 class="dish__name">Patatas fritas caseras</h4><span class="dish__leader"></span><span class="dish__price">4,50 €</span></div>
-                </article>
-                <article class="dish">
-                  <div class="dish__line"><h4 class="dish__name">Verduras al carbón</h4><span class="dish__leader"></span><span class="dish__price">6,00 €</span></div>
-                  <p class="dish__desc">Calabacín, berenjena, pimiento y cebolla.</p>
-                </article>
-              </div>
-              <div>
-                <article class="dish">
-                  <div class="dish__line"><h4 class="dish__name">Pimientos del padrón</h4><span class="dish__leader"></span><span class="dish__price">5,50 €</span></div>
-                </article>
-                <article class="dish">
-                  <div class="dish__line"><h4 class="dish__name">Ensalada verde</h4><span class="dish__leader"></span><span class="dish__price">4,50 €</span></div>
-                </article>
+          <div class="menu__panel" role="tabpanel" id="panel-pizzas" aria-labelledby="tab-pizzas" tabindex="0">
+            <h3 class="menu__panel-title">Nuestras pizzas</h3>
+            <div class="menu__block">
+              <div class="menu__layout">
+                <div>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Margarita</h4><span class="dish__leader"></span><span class="dish__price">8,00 €</span></div>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Prosciutto</h4><span class="dish__leader"></span><span class="dish__price">10,00 €</span></div>
+                  </article>
+                </div>
+                <div>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">4 Quesos</h4><span class="dish__leader"></span><span class="dish__price">12,00 €</span></div>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Parmesana</h4><span class="dish__leader"></span><span class="dish__price">13,00 €</span></div>
+                  </article>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="menu__panel" role="tabpanel" id="panel-desayunos" aria-labelledby="tab-desayunos" tabindex="0">
-            <h3 class="menu__panel-title">Desayunos</h3>
-            <div class="menu__layout">
-              <div>
-                <article class="dish">
-                  <div class="dish__line"><h4 class="dish__name">Tostada con tomate y aceite</h4><span class="dish__leader"></span><span class="dish__price">2,80 €</span></div>
-                  <p class="dish__desc">Pan de pueblo. Añade jamón por 2,00 €.</p>
-                </article>
-                <article class="dish">
-                  <div class="dish__line"><h4 class="dish__name">Desayuno Fausto’s</h4><span class="dish__leader"></span><span class="dish__price">8,50 €</span></div>
-                  <p class="dish__desc">Huevos de corral, chorizo a la brasa, pan tostado, zumo y café.</p>
-                </article>
+          <div class="menu__panel" role="tabpanel" id="panel-ensaladas" aria-labelledby="tab-ensaladas" tabindex="0">
+            <h3 class="menu__panel-title">Ensaladas y para acompañar</h3>
+            <div class="menu__block">
+              <div class="menu__layout">
+                <div>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Ensalada mixta</h4><span class="dish__leader"></span><span class="dish__price">7,00 €</span></div>
+                    <p class="dish__desc">Lechugas, tomate y cebolla.</p>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Ensalada de rúcula y queso</h4><span class="dish__leader"></span><span class="dish__price">8,00 €</span></div>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Ensalada de espinaca, espárragos, nueces y queso parmesano</h4><span class="dish__leader"></span><span class="dish__price">9,00 €</span></div>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Ensalada de canónigos, salmón, aguacate y queso de cabra</h4><span class="dish__leader"></span><span class="dish__price">12,50 €</span></div>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Ensalada de canónigos, frutos rojos y queso de cabra</h4><span class="dish__leader"></span><span class="dish__price">10,00 €</span></div>
+                  </article>
+                </div>
+                <div>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Ensalada césar</h4><span class="dish__leader"></span><span class="dish__price">12,00 €</span></div>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Parrillada de verduras</h4><span class="dish__leader"></span><span class="dish__price">11,00 €</span></div>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Patatas fritas</h4><span class="dish__leader"></span><span class="dish__price">6,00 €</span></div>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Patatas fritas provenzal</h4><span class="dish__leader"></span><span class="dish__price">7,00 €</span></div>
+                    <p class="dish__desc">Con ajo y perejil.</p>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Patatas Plomo</h4><span class="dish__leader"></span><span class="dish__price">6,00 €</span></div>
+                    <p class="dish__desc">Patata asada con queso.</p>
+                  </article>
+                </div>
               </div>
-              <div>
-                <article class="dish">
-                  <div class="dish__line"><h4 class="dish__name">Café, té o infusión</h4><span class="dish__leader"></span><span class="dish__price">1,60 €</span></div>
-                </article>
-                <article class="dish">
-                  <div class="dish__line"><h4 class="dish__name">Zumo de naranja natural</h4><span class="dish__leader"></span><span class="dish__price">3,00 €</span></div>
-                </article>
+            </div>
+          </div>
+
+          <div class="menu__panel" role="tabpanel" id="panel-infantil" aria-labelledby="tab-infantil" tabindex="0">
+            <h3 class="menu__panel-title">Menú infantil</h3>
+            <div class="menu__block">
+              <p class="menu__block-note">Los sándwiches incluyen bebida y patatas fritas.</p>
+              <div class="menu__layout">
+                <div>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Hamburguesa con lechuga y tomate o jamón y queso</h4><span class="dish__leader"></span><span class="dish__price">14,00 €</span></div>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Hamburguesa completa</h4><span class="dish__leader"></span><span class="dish__price">15,00 €</span></div>
+                  </article>
+                </div>
+                <div>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Bocadillo de pulled pork</h4><span class="dish__leader"></span><span class="dish__price">15,00 €</span></div>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Spaghetti en salsa de tomate y queso parmesano</h4><span class="dish__leader"></span><span class="dish__price">12,00 €</span></div>
+                  </article>
+                </div>
               </div>
             </div>
           </div>
 
           <div class="menu__panel" role="tabpanel" id="panel-postres" aria-labelledby="tab-postres" tabindex="0">
             <h3 class="menu__panel-title">Postres</h3>
-            <div class="menu__layout">
-              <div>
-                <article class="dish">
-                  <div class="dish__line"><h4 class="dish__name">Flan casero con dulce de leche</h4><span class="dish__leader"></span><span class="dish__price">5,50 €</span></div>
-                </article>
-                <article class="dish">
-                  <div class="dish__line"><h4 class="dish__name">Tarta de queso al horno</h4><span class="dish__leader"></span><span class="dish__price">6,00 €</span></div>
-                </article>
+            <div class="menu__block">
+              <div class="menu__layout">
+                <div>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Flan</h4><span class="dish__leader"></span><span class="dish__price">6,00 €</span></div>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Tarta de queso</h4><span class="dish__leader"></span><span class="dish__price">7,00 €</span></div>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Brownie</h4><span class="dish__leader"></span><span class="dish__price">6,50 €</span></div>
+                  </article>
+                </div>
+                <div>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Panqueque</h4><span class="dish__leader"></span><span class="dish__price">6,00 €</span></div>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Tarta tibia de manzana con helado de vainilla</h4><span class="dish__leader"></span><span class="dish__price">7,00 €</span></div>
+                  </article>
+                </div>
               </div>
-              <div>
-                <article class="dish">
-                  <div class="dish__line"><h4 class="dish__name">Panqueque de dulce de leche</h4><span class="dish__leader"></span><span class="dish__price">5,50 €</span></div>
-                  <p class="dish__desc">Caramelizado al momento.</p>
-                </article>
-                <article class="dish">
-                  <div class="dish__line"><h4 class="dish__name">Fruta de temporada</h4><span class="dish__leader"></span><span class="dish__price">4,00 €</span></div>
-                </article>
+            </div>
+          </div>
+
+          <div class="menu__panel" role="tabpanel" id="panel-desayunos" aria-labelledby="tab-desayunos" tabindex="0">
+            <h3 class="menu__panel-title">Desayunos y brunch</h3>
+            <p class="menu__panel-note">Desayunos de 8:00 a 12:00.</p>
+            <div class="menu__block">
+              <h4 class="menu__block-title">Brunchs Fausto’s</h4>
+              <div class="menu__layout">
+                <div>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Del Mundo</h4><span class="dish__leader"></span><span class="dish__price">11,50 €</span></div>
+                    <p class="dish__desc">Sándwich mixto, ensalada de frutas, zumo de naranja y café, té o cappuccino.</p>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Americano</h4><span class="dish__leader"></span><span class="dish__price">12,50 €</span></div>
+                    <p class="dish__desc">Tosta con guacamole, bacon y huevos a la plancha, ensalada de frutas, donut, zumo de naranja y café, té o cappuccino.</p>
+                  </article>
+                </div>
+                <div>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Francés</h4><span class="dish__leader"></span><span class="dish__price">12,50 €</span></div>
+                    <p class="dish__desc">Croissant con mantequilla y mermelada, yogur con granola, zumo de naranja y café, té o cappuccino.</p>
+                  </article>
+                </div>
               </div>
+            </div>
+            <div class="menu__block">
+              <h4 class="menu__block-title">Tostadas</h4>
+              <p class="menu__block-note">Ingredientes extra (huevo, aguacate o bacon): 1,00 €.</p>
+              <table class="price-table" style="--cols:2">
+                <caption class="visually-hidden">Tostadas</caption>
+                <thead><tr><th scope="col"><span class="visually-hidden">Plato</span></th><th scope="col">Pitufo</th><th scope="col">Mollete</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row"><span class="dish__name">Mantequilla y mermelada</span></th><td>1,90 €</td><td>2,40 €</td></tr>
+                  <tr><th scope="row"><span class="dish__name">Aceite y tomate</span></th><td>2,00 €</td><td>2,40 €</td></tr>
+                  <tr><th scope="row"><span class="dish__name">Mixto</span><span class="dish__desc">Jamón york y queso.</span></th><td>2,80 €</td><td>3,50 €</td></tr>
+                  <tr><th scope="row"><span class="dish__name">Catalana</span><span class="dish__desc">Jamón serrano y tomate.</span></th><td class="price-table__ask">consultar</td><td>3,40 €</td></tr>
+                  <tr><th scope="row"><span class="dish__name">Jamón serrano y queso</span></th><td>2,60 €</td><td>3,60 €</td></tr>
+                  <tr><th scope="row"><span class="dish__name">Pavo y queso</span></th><td>2,30 €</td><td>3,30 €</td></tr>
+                  <tr><th scope="row"><span class="dish__name">Atún y tomate</span></th><td>2,60 €</td><td>3,60 €</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="menu__block">
+              <h4 class="menu__block-title">Bollería</h4>
+              <div class="menu__layout">
+                <div>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Croissant</h4><span class="dish__leader"></span><span class="dish__price">1,80 €</span></div>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Croissant con mantequilla y mermelada</h4><span class="dish__leader"></span><span class="dish__price">2,60 €</span></div>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Croissant con queso</h4><span class="dish__leader"></span><span class="dish__price">2,60 €</span></div>
+                  </article>
+                </div>
+                <div>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Croissant mixto</h4><span class="dish__leader"></span><span class="dish__price">3,20 €</span></div>
+                    <p class="dish__desc">Jamón york y queso.</p>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Napolitana</h4><span class="dish__leader"></span><span class="dish__price">2,20 €</span></div>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Yogur con semillas, cereales y mix de frutas</h4><span class="dish__leader"></span><span class="dish__price">4,90 €</span></div>
+                  </article>
+                </div>
+              </div>
+            </div>
+            <div class="menu__block">
+              <h4 class="menu__block-title">Huevos</h4>
+              <div class="menu__layout">
+                <div>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Huevos revueltos</h4><span class="dish__leader"></span><span class="dish__price">5,50 €</span></div>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Huevos revueltos con bacon</h4><span class="dish__leader"></span><span class="dish__price">7,00 €</span></div>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Omelette simple</h4><span class="dish__leader"></span><span class="dish__price">6,00 €</span></div>
+                  </article>
+                </div>
+                <div>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Omelette con bacon o jamón cocido</h4><span class="dish__leader"></span><span class="dish__price">7,50 €</span></div>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Omelette Fiorentina</h4><span class="dish__leader"></span><span class="dish__price">9,50 €</span></div>
+                    <p class="dish__desc">Con espinaca, tomate, queso y champiñones.</p>
+                  </article>
+                </div>
+              </div>
+            </div>
+            <div class="menu__block">
+              <h4 class="menu__block-title">Cafés y bebidas calientes</h4>
+              <p class="menu__block-note">Leche vegetal: +0,20 €.</p>
+              <table class="price-table" style="--cols:2">
+                <caption class="visually-hidden">Cafés y bebidas calientes</caption>
+                <thead><tr><th scope="col"><span class="visually-hidden">Plato</span></th><th scope="col">Normal</th><th scope="col">Doble</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row"><span class="dish__name">Expresso</span></th><td>1,60 €</td><td>2,50 €</td></tr>
+                  <tr><th scope="row"><span class="dish__name">Cortado</span></th><td>1,70 €</td><td>–</td></tr>
+                  <tr><th scope="row"><span class="dish__name">Americano</span></th><td>1,70 €</td><td>–</td></tr>
+                  <tr><th scope="row"><span class="dish__name">Sombra</span><span class="dish__desc">Más leche que café.</span></th><td>1,70 €</td><td>2,20 €</td></tr>
+                  <tr><th scope="row"><span class="dish__name">Nube</span><span class="dish__desc">Leche con poco café.</span></th><td>1,70 €</td><td>2,20 €</td></tr>
+                  <tr><th scope="row"><span class="dish__name">Café con leche</span></th><td>1,80 €</td><td>2,70 €</td></tr>
+                  <tr><th scope="row"><span class="dish__name">Cappuccino</span></th><td>2,20 €</td><td>–</td></tr>
+                  <tr><th scope="row"><span class="dish__name">Latte macchiato</span></th><td>1,80 €</td><td>–</td></tr>
+                  <tr><th scope="row"><span class="dish__name">Moka</span></th><td>2,30 €</td><td>–</td></tr>
+                  <tr><th scope="row"><span class="dish__name">Flat white</span></th><td>2,70 €</td><td>–</td></tr>
+                  <tr><th scope="row"><span class="dish__name">Ice coffee</span></th><td>2,00 €</td><td>–</td></tr>
+                  <tr><th scope="row"><span class="dish__name">Bombón</span><span class="dish__desc">Con leche condensada.</span></th><td>2,30 €</td><td>–</td></tr>
+                  <tr><th scope="row"><span class="dish__name">Cola Cao</span></th><td>1,80 €</td><td>–</td></tr>
+                  <tr><th scope="row"><span class="dish__name">Batidos Puleva</span></th><td>1,80 €</td><td>–</td></tr>
+                  <tr><th scope="row"><span class="dish__name">Chocolate caliente</span></th><td>2,40 €</td><td>–</td></tr>
+                  <tr><th scope="row"><span class="dish__name">Infusiones</span></th><td>1,60 €</td><td>–</td></tr>
+                  <tr><th scope="row"><span class="dish__name">Zumo de naranja</span></th><td>3,00 €</td><td>–</td></tr>
+                </tbody>
+              </table>
             </div>
           </div>
 
           <div class="menu__panel" role="tabpanel" id="panel-bebidas" aria-labelledby="tab-bebidas" tabindex="0">
             <h3 class="menu__panel-title">Bebidas</h3>
-            <div class="menu__layout">
-              <div>
-                <article class="dish">
-                  <div class="dish__line"><h4 class="dish__name">Malbec, copa</h4><span class="dish__leader"></span><span class="dish__price">4,50 €</span></div>
-                  <p class="dish__desc">Botella 22,00 €. Pregunta por la carta de vinos.</p>
-                </article>
-                <article class="dish">
-                  <div class="dish__line"><h4 class="dish__name">Ribera del Duero, copa</h4><span class="dish__leader"></span><span class="dish__price">4,00 €</span></div>
-                </article>
-                <article class="dish">
-                  <div class="dish__line"><h4 class="dish__name">Caña de cerveza</h4><span class="dish__leader"></span><span class="dish__price">2,50 €</span></div>
-                </article>
+            <div class="menu__block">
+              <h4 class="menu__block-title">Refrescos y agua</h4>
+              <div class="menu__layout">
+                <div>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Agua</h4><span class="dish__leader"></span><span class="dish__price">1,80 €</span></div>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Agua con gas</h4><span class="dish__leader"></span><span class="dish__price">2,20 €</span></div>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Refrescos</h4><span class="dish__leader"></span><span class="dish__price">3,50 €</span></div>
+                  </article>
+                </div>
+                <div>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Nestea</h4><span class="dish__leader"></span><span class="dish__price">3,50 €</span></div>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Aquarius</h4><span class="dish__leader"></span><span class="dish__price">3,50 €</span></div>
+                  </article>
+                </div>
               </div>
-              <div>
-                <article class="dish">
-                  <div class="dish__line"><h4 class="dish__name">Tinto de verano</h4><span class="dish__leader"></span><span class="dish__price">3,50 €</span></div>
-                </article>
-                <article class="dish">
-                  <div class="dish__line"><h4 class="dish__name">Refrescos</h4><span class="dish__leader"></span><span class="dish__price">2,80 €</span></div>
-                </article>
-                <article class="dish">
-                  <div class="dish__line"><h4 class="dish__name">Agua mineral</h4><span class="dish__leader"></span><span class="dish__price">2,00 €</span></div>
-                </article>
+            </div>
+            <div class="menu__block">
+              <h4 class="menu__block-title">Cerveza</h4>
+              <div class="menu__layout">
+                <div>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Caña</h4><span class="dish__leader"></span><span class="dish__price">1,70 €</span></div>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Tubo</h4><span class="dish__leader"></span><span class="dish__price">2,10 €</span></div>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Pinta</h4><span class="dish__leader"></span><span class="dish__price">3,20 €</span></div>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Botellín Estrella Galicia</h4><span class="dish__leader"></span><span class="dish__price">2,80 €</span></div>
+                  </article>
+                </div>
+                <div>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Botellín Estrella Galicia 0,0</h4><span class="dish__leader"></span><span class="dish__price">2,80 €</span></div>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Botellín Estrella Galicia sin gluten</h4><span class="dish__leader"></span><span class="dish__price">2,80 €</span></div>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Botellín 1906 Reserva</h4><span class="dish__leader"></span><span class="dish__price">4,00 €</span></div>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Botellín 1906 Roja</h4><span class="dish__leader"></span><span class="dish__price">4,00 €</span></div>
+                  </article>
+                </div>
+              </div>
+            </div>
+            <div class="menu__block">
+              <h4 class="menu__block-title">Cócteles</h4>
+              <table class="price-table" style="--cols:2">
+                <caption class="visually-hidden">Cócteles</caption>
+                <thead><tr><th scope="col"><span class="visually-hidden">Plato</span></th><th scope="col">Copa</th><th scope="col">Jarra</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row"><span class="dish__name">Sangría</span></th><td>8,00 €</td><td>24,00 €</td></tr>
+                  <tr><th scope="row"><span class="dish__name">Aperol Spritz</span></th><td>8,00 €</td><td>–</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="menu__block">
+              <h4 class="menu__block-title">Destilados (copa)</h4>
+              <div class="menu__layout">
+                <div>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Whisky Ballantine’s</h4><span class="dish__leader"></span><span class="dish__price">8,00 €</span></div>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Whisky Jack Daniel’s</h4><span class="dish__leader"></span><span class="dish__price">9,00 €</span></div>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Whisky Black Label</h4><span class="dish__leader"></span><span class="dish__price">10,00 €</span></div>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Ron Barceló Imperial</h4><span class="dish__leader"></span><span class="dish__price">8,00 €</span></div>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Ron Cacique Añejo</h4><span class="dish__leader"></span><span class="dish__price">8,00 €</span></div>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Ron Legendario</h4><span class="dish__leader"></span><span class="dish__price">8,00 €</span></div>
+                  </article>
+                </div>
+                <div>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Ginebra Beefeater</h4><span class="dish__leader"></span><span class="dish__price">8,00 €</span></div>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Ginebra Larios</h4><span class="dish__leader"></span><span class="dish__price">8,00 €</span></div>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Ginebra Bombay</h4><span class="dish__leader"></span><span class="dish__price">9,00 €</span></div>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Vodka Absolut</h4><span class="dish__leader"></span><span class="dish__price">9,00 €</span></div>
+                  </article>
+                  <article class="dish">
+                    <div class="dish__line"><h4 class="dish__name">Tequila José Cuervo Especial Gold (chupito)</h4><span class="dish__leader"></span><span class="dish__price">6,00 €</span></div>
+                  </article>
+                </div>
               </div>
             </div>
           </div>
 
-          <p class="menu__note">IVA incluido. Si tienes alguna alergia o intolerancia, avísanos: te informamos de los alérgenos de cada plato.</p>
+          <div class="menu__panel" role="tabpanel" id="panel-vinos" aria-labelledby="tab-vinos" tabindex="0">
+            <h3 class="menu__panel-title">Carta de vinos</h3>
+            <div class="menu__block">
+              <h4 class="menu__block-title">Tintos D.O. Málaga</h4>
+              <table class="price-table" style="--cols:2">
+                <caption class="visually-hidden">Tintos D.O. Málaga</caption>
+                <thead><tr><th scope="col"><span class="visually-hidden">Plato</span></th><th scope="col">Copa</th><th scope="col">Botella</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row"><span class="dish__name">Don Tulio</span></th><td>4,50 €</td><td>23,00 €</td></tr>
+                  <tr><th scope="row"><span class="dish__name">Pago El Espino</span></th><td>–</td><td>27,00 €</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="menu__block">
+              <h4 class="menu__block-title">Tintos D.O. Ribera del Duero</h4>
+              <table class="price-table" style="--cols:2">
+                <caption class="visually-hidden">Tintos D.O. Ribera del Duero</caption>
+                <thead><tr><th scope="col"><span class="visually-hidden">Plato</span></th><th scope="col">Copa</th><th scope="col">Botella</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row"><span class="dish__name">Finca Vallejos</span></th><td>4,50 €</td><td>23,00 €</td></tr>
+                  <tr><th scope="row"><span class="dish__name">Tamaral Roble</span></th><td>4,50 €</td><td>23,00 €</td></tr>
+                  <tr><th scope="row"><span class="dish__name">Protos 9 meses</span></th><td>6,00 €</td><td>25,00 €</td></tr>
+                  <tr><th scope="row"><span class="dish__name">Convento San Francisco</span></th><td>–</td><td>31,00 €</td></tr>
+                  <tr><th scope="row"><span class="dish__name">La Hormiga de Antídoto</span></th><td>–</td><td>42,00 €</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="menu__block">
+              <h4 class="menu__block-title">Tintos D.O. Rioja</h4>
+              <table class="price-table" style="--cols:2">
+                <caption class="visually-hidden">Tintos D.O. Rioja</caption>
+                <thead><tr><th scope="col"><span class="visually-hidden">Plato</span></th><th scope="col">Copa</th><th scope="col">Botella</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row"><span class="dish__name">Cune Crianza</span></th><td>4,50 €</td><td>23,00 €</td></tr>
+                  <tr><th scope="row"><span class="dish__name">Tobía Selección de Autor</span></th><td>6,00 €</td><td>25,00 €</td></tr>
+                  <tr><th scope="row"><span class="dish__name">Ijalba Reserva</span></th><td>–</td><td>25,00 €</td></tr>
+                  <tr><th scope="row"><span class="dish__name">Orben</span></th><td>–</td><td>36,00 €</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="menu__block">
+              <h4 class="menu__block-title">Argentinos</h4>
+              <table class="price-table" style="--cols:2">
+                <caption class="visually-hidden">Argentinos</caption>
+                <thead><tr><th scope="col"><span class="visually-hidden">Plato</span></th><th scope="col">Copa</th><th scope="col">Botella</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row"><span class="dish__name">Finca Las Moras Malbec</span></th><td>6,00 €</td><td>25,00 €</td></tr>
+                  <tr><th scope="row"><span class="dish__name">Los Cardos Malbec</span></th><td>6,00 €</td><td>25,00 €</td></tr>
+                  <tr><th scope="row"><span class="dish__name">Saurus Malbec (Patagonia)</span></th><td>7,00 €</td><td>29,00 €</td></tr>
+                  <tr><th scope="row"><span class="dish__name">Tempus Alba Malbec</span></th><td>–</td><td>42,00 €</td></tr>
+                  <tr><th scope="row"><span class="dish__name">Tempus Alba Cabernet</span></th><td>–</td><td>42,00 €</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="menu__block">
+              <h4 class="menu__block-title">Blanco, cava y rosado</h4>
+              <table class="price-table" style="--cols:2">
+                <caption class="visually-hidden">Blanco, cava y rosado</caption>
+                <thead><tr><th scope="col"><span class="visually-hidden">Plato</span></th><th scope="col">Copa</th><th scope="col">Botella</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row"><span class="dish__name">Cune Verdejo</span></th><td>4,50 €</td><td>23,00 €</td></tr>
+                  <tr><th scope="row"><span class="dish__name">Tamaral Verdejo</span></th><td>5,00 €</td><td>24,00 €</td></tr>
+                  <tr><th scope="row"><span class="dish__name">El Lagar Rosado</span></th><td>4,50 €</td><td>23,00 €</td></tr>
+                  <tr><th scope="row"><span class="dish__name">Dominio de Arenas Moscatel</span></th><td>–</td><td>26,00 €</td></tr>
+                  <tr><th scope="row"><span class="dish__name">Roger Goulart Cava</span></th><td>4,50 €</td><td>22,00 €</td></tr>
+                  <tr><th scope="row"><span class="dish__name">Juvé &amp; Camps Essential</span></th><td>–</td><td>27,00 €</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <p class="menu__note">Consulta con nuestro personal la información sobre alérgenos de nuestros productos. IVA incluido.</p>
         </div>
       </div>
     </section>
@@ -325,9 +715,9 @@
         </div>
         <ul class="gallery" role="list" style="list-style:none;margin:0;padding:0">
           <li class="gallery__item--big"><button class="photo" type="button" data-lightbox>
-            <img src="assets/fotos/chuleton.jpg" alt="Chuletón trinchado sobre tabla de madera" loading="lazy" data-photo>
-            <span class="photo__fallback" aria-hidden="true"><strong>Chuletón</strong>chuleton.jpg</span>
-            <span class="photo__caption">Chuletón para compartir</span></button></li>
+            <img src="assets/fotos/ojo-de-bife.jpg" alt="Ojo de bife a la parrilla" loading="lazy" data-photo>
+            <span class="photo__fallback" aria-hidden="true"><strong>Ojo de bife</strong>ojo-de-bife.jpg</span>
+            <span class="photo__caption">Ojo de bife</span></button></li>
           <li class="gallery__item--tall"><button class="photo" type="button" data-lightbox>
             <img src="assets/fotos/parrilla.jpg" alt="La parrilla encendida con brasas" loading="lazy" data-photo>
             <span class="photo__fallback" aria-hidden="true"><strong>La parrilla</strong>parrilla.jpg</span>
@@ -343,15 +733,15 @@
           <li class="gallery__item--wide"><button class="photo" type="button" data-lightbox>
             <img src="assets/fotos/parrillada.jpg" alt="Parrillada para dos con varios cortes" loading="lazy" data-photo>
             <span class="photo__fallback" aria-hidden="true"><strong>Parrillada</strong>parrillada.jpg</span>
-            <span class="photo__caption">Parrillada Fausto’s</span></button></li>
+            <span class="photo__caption">Parrillada para compartir</span></button></li>
           <li><button class="photo" type="button" data-lightbox>
             <img src="assets/fotos/salon.jpg" alt="El salón del restaurante" loading="lazy" data-photo>
             <span class="photo__fallback" aria-hidden="true"><strong>El salón</strong>salon.jpg</span>
             <span class="photo__caption">El salón</span></button></li>
           <li><button class="photo" type="button" data-lightbox>
-            <img src="assets/fotos/postre.jpg" alt="Flan casero con dulce de leche" loading="lazy" data-photo>
-            <span class="photo__fallback" aria-hidden="true"><strong>Flan casero</strong>postre.jpg</span>
-            <span class="photo__caption">Flan con dulce de leche</span></button></li>
+            <img src="assets/fotos/postre.jpg" alt="Panqueque" loading="lazy" data-photo>
+            <span class="photo__fallback" aria-hidden="true"><strong>Panqueque</strong>postre.jpg</span>
+            <span class="photo__caption">Panqueque</span></button></li>
         </ul>
       </div>
     </section>
@@ -510,7 +900,7 @@
       <div class="site-footer__top">
         <div>
           <a class="brand" href="#top">Fausto<span>’</span>s Grill</a>
-          <p style="margin-top:var(--s-3);max-width:32ch">Carnes a la brasa y cocina non-stop en el barrio de la Victoria, Málaga.</p>
+          <p style="margin-top:var(--s-3);max-width:32ch">Tapas &amp; Grill. Carnes premium argentinas y cocina non-stop en el barrio de la Victoria, Málaga.</p>
         </div>
         <div>
           <h3>Visítanos</h3>

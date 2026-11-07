@@ -5,7 +5,7 @@ Coloca aquí las fotos con **estos nombres exactos** (JPG, idealmente 1600 px de
 | Archivo | Dónde aparece |
 |---|---|
 | `hero.jpg` | Fondo de la portada (horizontal, oscura funciona mejor) |
-| `chuleton.jpg` | Galería, foto grande |
+| `ojo-de-bife.jpg` | Galería, foto grande |
 | `parrilla.jpg` | Galería, vertical |
 | `provoleta.jpg` | Galería |
 | `empanadas.jpg` | Galería |
