@@ -16,7 +16,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&family=Hanken+Grotesk:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..900&family=Hanken+Grotesk:wght@400;500;600&display=swap">
   <link rel="stylesheet" href="css/styles.css">
 
   <script>document.documentElement.classList.replace('no-js', 'js');</script>
@@ -60,32 +60,37 @@
     <symbol id="i-flame" viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.4-.5-2-1-3-1.1-2.1-.2-4.1 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.2.4-2.3 1-3.3.3 1.8 1.2 2.8 2.5 2.8z"/></symbol>
     <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5-4.8-4.6 6.6-.9z"/></symbol>
     <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1.1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></symbol>
+    <symbol id="i-pan" viewBox="0 0 64 40"><ellipse cx="24" cy="22" rx="22" ry="13" fill="currentColor"/><ellipse cx="24" cy="18" rx="17" ry="8" fill="none" stroke="var(--pan-inner, #f2e9d8)" stroke-width="2.5"/><path d="M42 12 58 2" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></symbol>
   </svg>
 
   <a class="skip-link" href="#main">Saltar al contenido</a>
 
   <header class="site-header" id="top">
     <div class="wrap site-header__bar">
-      <a class="brand" href="#top" aria-label="Fausto's Grill, inicio">Fausto<span>’</span>s Grill</a>
+      <a class="logo" href="#top" aria-label="Fausto's Tapas &amp; Grill, inicio">
+          <span class="logo__top"><span>Tapas</span><svg class="logo__pan" viewBox="0 0 64 40" aria-hidden="true"><use href="#i-pan"/></svg><span>Grill</span></span>
+          <span class="logo__name">Fausto’s</span>
+          <span class="logo__sub">Carnes premium argentinas</span>
+      </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav">
         <svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg>
         <span class="visually-hidden">Abrir menú de navegación</span>
       </button>
       <nav class="nav" id="nav" aria-label="Principal">
         <ul class="nav__links">
-          <li><a href="#carta">Carta</a></li>
-          <li><a href="#fotos">Fotos</a></li>
-          <li><a href="#resenas">Reseñas</a></li>
-          <li><a href="#ubicacion">Ubicación</a></li>
+          <li><a href="#top">Inicio</a></li>
+          <li><a href="#nosotros">Sobre nosotros</a></li>
+          <li><a href="#carta">Menú</a></li>
+          <li><a href="#fotos">Galería</a></li>
+          <li><a href="#reservas">Reservas</a></li>
+          <li><a href="#resenas">Opiniones</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
-        <a class="btn btn--ember" href="#contacto">Reservar mesa</a>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <!-- ============ Portada ============ -->
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero__media">
         <img src="assets/fotos/hero.jpg" alt="" fetchpriority="high" data-photo>
@@ -95,13 +100,13 @@
 
       <div class="wrap hero__inner">
         <h1 id="hero-title">
-          <span class="sear" style="--i:0">A la brasa,</span>
-          <span class="sear" style="--i:1"><em>sin prisas.</em></span>
+          <span class="sear" style="--i:0">Experiencia</span>
+          <span class="sear" style="--i:1"><em>a la parrilla</em></span>
         </h1>
-        <p class="hero__lede">Carnes premium argentinas a la parrilla, tapas y cocina abierta sin parar de martes a domingo, en pleno barrio de la Victoria.</p>
+        <p class="hero__lede">Carnes premium argentinas, tapas y cocina non-stop en Calle Victoria, Málaga.</p>
         <div class="hero__actions">
-          <a class="btn btn--ember" href="#contacto">Reservar mesa</a>
-          <a class="btn btn--ghost" href="#carta">Ver la carta</a>
+          <a class="btn btn--ember" href="#carta">Menú Fausto’s</a>
+          <a class="btn btn--ghost" href="#reservas">Reservar mesa</a>
         </div>
         <div class="hero__meta">
           <span class="status" data-status>
@@ -114,12 +119,52 @@
       </div>
     </section>
 
+    <!-- ============ Casa de carne ============ -->
+    <section class="section statement" aria-labelledby="casa-title">
+      <div class="wrap statement__inner">
+        <svg class="statement__icon" viewBox="0 0 64 40" aria-hidden="true"><use href="#i-pan"/></svg>
+        <h2 id="casa-title">Casa de carne argentina</h2>
+        <p class="statement__lede">Cortes argentinos hechos a la parrilla, al punto que pidas.</p>
+        <p>En Fausto’s la parrilla manda: ojo de bife, bife de chorizo, vacío, entraña y solomillo, con chorizo criollo, morcilla y provoleta para empezar. Y como buena casa de tapas, también hay raciones para compartir, cocina casera y desayunos.</p>
+      </div>
+    </section>
+
+    <!-- ============ Destacados de la carta ============ -->
+    <section class="section dark teaser" aria-labelledby="teaser-title">
+      <div class="wrap">
+        <div class="teaser__head">
+          <h2 id="teaser-title">Menú <span>Fausto’s</span></h2>
+          <p>Parrilla argentina, tapas de toda la vida y cocina non-stop de martes a domingo.</p>
+          <a class="btn btn--ember" href="#carta">Ver el menú completo</a>
+        </div>
+        <ul class="teaser__grid" role="list">
+          <li><figure class="photo teaser__photo">
+            <img src="assets/fotos/ojo-de-bife.jpg" alt="Ojo de bife a la parrilla" loading="lazy" data-photo>
+            <span class="photo__fallback" aria-hidden="true"><strong>Ojo de bife</strong>ojo-de-bife.jpg</span>
+          </figure><p class="teaser__name">Ojo de bife</p></li>
+          <li><figure class="photo teaser__photo">
+            <img src="assets/fotos/provoleta.jpg" alt="Provoleta a la parrilla" loading="lazy" data-photo>
+            <span class="photo__fallback" aria-hidden="true"><strong>Provoleta</strong>provoleta.jpg</span>
+          </figure><p class="teaser__name">Provoleta de la casa</p></li>
+          <li><figure class="photo teaser__photo">
+            <img src="assets/fotos/empanadas.jpg" alt="Empanadas" loading="lazy" data-photo>
+            <span class="photo__fallback" aria-hidden="true"><strong>Empanadas</strong>empanadas.jpg</span>
+          </figure><p class="teaser__name">Empanadas</p></li>
+          <li><figure class="photo teaser__photo">
+            <img src="assets/fotos/parrillada.jpg" alt="Parrillada para compartir" loading="lazy" data-photo>
+            <span class="photo__fallback" aria-hidden="true"><strong>Parrillada</strong>parrillada.jpg</span>
+          </figure><p class="teaser__name">Parrillada para compartir</p></li>
+        </ul>
+      </div>
+    </section>
+
+
     <!-- ============ Carta ============
          Generada a partir de la carta impresa (noviembre 2026). -->
     <section class="section" id="carta" aria-labelledby="carta-title">
       <div class="wrap">
         <div class="section__head">
-          <h2 id="carta-title">La carta</h2>
+          <h2 id="carta-title">Menú</h2>
           <p>Carnes premium argentinas a la brasa, tapas, cocina casera y desayunos. Todos los precios llevan IVA incluido.</p>
         </div>
 
@@ -704,13 +749,78 @@
       </div>
     </section>
 
+    <!-- ============ Reservas ============ -->
+    <section class="section reserve" id="reservas" aria-labelledby="reservas-title">
+      <div class="wrap reserve__inner">
+        <div class="reserve__text">
+          <h2 id="reservas-title">Reservas</h2>
+          <p>Reserva tu mesa con el formulario. Si es para hoy mismo, mejor llámanos y te confirmamos al momento.</p>
+          <a class="reserve__phone" href="tel:+34952006261" data-phone-link><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><span data-phone>952 00 62 61</span></a>
+          <p class="reserve__note">Grupos de más de diez personas o eventos: llámanos y lo preparamos contigo.</p>
+        </div>
+          <form class="form" data-reserve novalidate>
+            <h3>Pedir una mesa</h3>
+            <p data-reserve-intro>Rellena los datos y te confirmamos la reserva lo antes posible.</p>
+            <div class="field">
+              <label for="r-name">Nombre</label>
+              <input id="r-name" name="name" autocomplete="name" required placeholder="Cómo te llamas">
+              <span class="field__error" aria-live="polite"></span>
+            </div>
+            <div class="form__row form__row--3">
+              <div class="field">
+                <label for="r-date">Día</label>
+                <input id="r-date" name="date" type="date" required>
+                <span class="field__error" aria-live="polite"></span>
+              </div>
+              <div class="field">
+                <label for="r-time">Hora</label>
+                <input id="r-time" name="time" type="time" min="09:00" max="23:00" step="900" required>
+                <span class="field__error" aria-live="polite"></span>
+              </div>
+              <div class="field">
+                <label for="r-people">Personas</label>
+                <select id="r-people" name="people" required>
+                  <option>1</option><option selected>2</option><option>3</option><option>4</option>
+                  <option>5</option><option>6</option><option>7</option><option>8</option>
+                  <option>9</option><option>10</option><option value="más de 10">Más de 10</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label for="r-notes">Comentarios <span style="font-weight:400;color:var(--ink-soft)">(opcional)</span></label>
+              <textarea id="r-notes" name="notes" placeholder="Terraza, trona, alergias, celebración…"></textarea>
+            </div>
+            <div class="form__actions">
+              <button class="btn btn--ember" type="submit" data-reserve-submit>Enviar solicitud</button>
+              <span class="form__status" data-reserve-status role="status"></span>
+            </div>
+          </form>
+      </div>
+    </section>
+
+    <!-- ============ Sobre nosotros ============ -->
+    <section class="section about dark" id="nosotros" aria-labelledby="nosotros-title">
+      <div class="wrap about__inner">
+        <div class="about__text">
+          <h2 id="nosotros-title">Experiencia <span>Fausto’s</span></h2>
+          <p>Fausto’s es una casa de tapas y parrilla en el barrio de la Victoria. La idea es sencilla: carnes premium argentinas hechas a la brasa, tapas para compartir y una cocina que no cierra entre horas.</p>
+          <p>Abrimos de martes a domingo de 9:00 a 23:30. Por la mañana, desayunos y brunch; a mediodía y por la noche, parrilla, tapas, pizzas y nuestra carta de vinos españoles y argentinos.</p>
+          <a class="btn btn--ghost" href="#carta">Conoce el menú</a>
+        </div>
+        <figure class="photo about__photo">
+          <img src="assets/fotos/salon.jpg" alt="El salón de Fausto’s" loading="lazy" data-photo>
+          <span class="photo__fallback" aria-hidden="true"><strong>El salón</strong>salon.jpg</span>
+        </figure>
+      </div>
+    </section>
+
     <!-- ============ Fotos ============
          Coloca las fotos en assets/fotos/ con estos nombres exactos.
          Mientras falte una, se muestra un recuadro con el nombre del plato. -->
-    <section class="section dark" id="fotos" aria-labelledby="fotos-title">
+    <section class="section" id="fotos" aria-labelledby="fotos-title">
       <div class="wrap">
         <div class="section__head">
-          <h2 id="fotos-title">Recién salido de la brasa</h2>
+          <h2 id="fotos-title">Galería</h2>
           <p>Lo que sale de nuestra cocina, tal cual llega a la mesa.</p>
         </div>
         <ul class="gallery" role="list" style="list-style:none;margin:0;padding:0">
@@ -760,11 +870,12 @@
       </figure>
     </dialog>
 
+
     <!-- ============ Reseñas ============ -->
-    <section class="section dark" id="resenas" aria-labelledby="resenas-title" style="padding-top:0">
+    <section class="section dark" id="resenas" aria-labelledby="resenas-title">
       <div class="wrap">
         <div class="section__head">
-          <h2 id="resenas-title">Lo que dicen en Google</h2>
+          <h2 id="resenas-title">Opiniones</h2>
           <div class="rating" data-rating hidden>
             <span class="rating__score" data-rating-score></span>
             <span class="rating__detail">
@@ -788,49 +899,33 @@
       </div>
     </section>
 
-    <!-- ============ Ubicación ============ -->
-    <section class="section" id="ubicacion" aria-labelledby="ubicacion-title">
+    <!-- ============ Ven a visitarnos ============ -->
+    <section class="section visit-sec" id="contacto" aria-labelledby="contacto-title">
       <div class="wrap">
-        <div class="section__head">
-          <h2 id="ubicacion-title">Dónde estamos</h2>
-          <p>En Calle Victoria, a diez minutos andando de la Plaza de la Merced y del centro histórico.</p>
-        </div>
-        <div class="visit">
-          <div class="visit__info">
-            <div class="visit__block">
-              <h3>Dirección</h3>
-              <address data-address>Calle Victoria 86<br>Málaga</address>
-              <p><a data-directions href="https://www.google.com/maps/dir/?api=1&destination=Calle+Victoria+86+M%C3%A1laga" target="_blank" rel="noopener">Cómo llegar</a></p>
-            </div>
-            <div class="visit__block">
-              <h3>Horario</h3>
-              <table class="hours" data-hours>
-                <caption class="visually-hidden">Horario de apertura</caption>
-                <tbody>
-                  <tr><th scope="row">Lunes</th><td>Cerrado</td></tr>
-                  <tr><th scope="row">Martes a domingo</th><td>9:00 – 23:30</td></tr>
-                </tbody>
-              </table>
-              <p class="dish__desc" data-hours-note>Cocina non-stop</p>
-            </div>
+        <h2 id="contacto-title" class="visit-sec__title">Ven a visitarnos</h2>
+        <div class="visit-cols">
+          <div class="visit-col">
+            <svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>
+            <h3 id="ubicacion">Ubicación</h3>
+            <address data-address>Calle Victoria 86<br>Málaga</address>
+            <a data-directions href="https://www.google.com/maps/dir/?api=1&amp;destination=Calle+Victoria+86+M%C3%A1laga" target="_blank" rel="noopener">Cómo llegar</a>
           </div>
-          <div class="map">
-            <iframe data-map title="Mapa: Fausto's Grill, Calle Victoria 86, Málaga" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps?q=Calle+Victoria+86,+M%C3%A1laga&amp;output=embed"></iframe>
+          <div class="visit-col">
+            <svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>
+            <h3>Horario</h3>
+            <table class="hours" data-hours>
+              <caption class="visually-hidden">Horario de apertura</caption>
+              <tbody>
+                <tr><th scope="row">Lunes</th><td>Cerrado</td></tr>
+                <tr><th scope="row">Martes a domingo</th><td>9:00 – 23:30</td></tr>
+              </tbody>
+            </table>
+            <p class="visit-col__note" data-hours-note>Cocina non-stop</p>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ Contacto / reserva ============ -->
-    <section class="section" id="contacto" aria-labelledby="contacto-title" style="padding-top:0">
-      <div class="wrap">
-        <div class="section__head">
-          <h2 id="contacto-title">Reserva o escríbenos</h2>
-          <p>Para grupos de más de diez personas o eventos, llámanos y lo preparamos contigo.</p>
-        </div>
-        <div class="contact">
-          <ul class="channels" data-channels>
+          <div class="visit-col">
+            <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>
+            <h3>Contacto</h3>
+            <ul class="channels" data-channels>
             <li><a href="tel:+34952006261" data-phone-link>
               <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>
               <span><small>Teléfono</small><strong data-phone>952 00 62 61</strong></span>
@@ -852,44 +947,11 @@
               <span><small>Dirección</small><strong>Calle Victoria 86, Málaga</strong></span>
               <svg class="icon arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
           </ul>
-
-          <form class="form" data-reserve novalidate>
-            <h3>Pedir una mesa</h3>
-            <p data-reserve-intro>Rellena los datos y te confirmamos la reserva lo antes posible.</p>
-            <div class="field">
-              <label for="r-name">Nombre</label>
-              <input id="r-name" name="name" autocomplete="name" required placeholder="Cómo te llamas">
-              <span class="field__error" aria-live="polite"></span>
-            </div>
-            <div class="form__row form__row--3">
-              <div class="field">
-                <label for="r-date">Día</label>
-                <input id="r-date" name="date" type="date" required>
-                <span class="field__error" aria-live="polite"></span>
-              </div>
-              <div class="field">
-                <label for="r-time">Hora</label>
-                <input id="r-time" name="time" type="time" min="09:00" max="23:00" step="900" required>
-                <span class="field__error" aria-live="polite"></span>
-              </div>
-              <div class="field">
-                <label for="r-people">Personas</label>
-                <select id="r-people" name="people" required>
-                  <option>1</option><option selected>2</option><option>3</option><option>4</option>
-                  <option>5</option><option>6</option><option>7</option><option>8</option>
-                  <option>9</option><option>10</option><option value="más de 10">Más de 10</option>
-                </select>
-              </div>
-            </div>
-            <div class="field">
-              <label for="r-notes">Comentarios <span style="font-weight:400;color:var(--ink-soft)">(opcional)</span></label>
-              <textarea id="r-notes" name="notes" placeholder="Terraza, trona, alergias, celebración…"></textarea>
-            </div>
-            <div class="form__actions">
-              <button class="btn btn--ember" type="submit" data-reserve-submit>Enviar solicitud</button>
-              <span class="form__status" data-reserve-status role="status"></span>
-            </div>
-          </form>
+          </div>
+        </div>
+        <div class="map">
+          <iframe data-map title="Mapa: Fausto's, Calle Victoria 86, Málaga" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Calle+Victoria+86,+M%C3%A1laga&amp;output=embed"></iframe>
         </div>
       </div>
     </section>
@@ -898,33 +960,39 @@
   <footer class="site-footer dark">
     <div class="wrap">
       <div class="site-footer__top">
+        <a class="logo logo--footer" href="#top" aria-label="Fausto's Tapas &amp; Grill, inicio">
+          <span class="logo__top"><span>Tapas</span><svg class="logo__pan" viewBox="0 0 64 40" aria-hidden="true"><use href="#i-pan"/></svg><span>Grill</span></span>
+          <span class="logo__name">Fausto’s</span>
+          <span class="logo__sub">Carnes premium argentinas</span>
+        </a>
         <div>
-          <a class="brand" href="#top">Fausto<span>’</span>s Grill</a>
-          <p style="margin-top:var(--s-3);max-width:32ch">Tapas &amp; Grill. Carnes premium argentinas y cocina non-stop en el barrio de la Victoria, Málaga.</p>
-        </div>
-        <div>
-          <h3>Visítanos</h3>
+          <h3>Información</h3>
           <ul>
-            <li>Calle Victoria 86, Málaga</li>
-            <li>Martes a domingo, 9:00 – 23:30</li>
-            <li>Lunes cerrado</li>
+            <li><a href="#nosotros">Sobre nosotros</a></li>
+            <li><a href="#carta">Menú</a></li>
+            <li><a href="#fotos">Galería</a></li>
+            <li><a href="#reservas">Reservas</a></li>
+            <li><a href="#contacto">Contacto</a></li>
           </ul>
         </div>
         <div>
-          <h3>Contacto</h3>
+          <h3>Visítanos</h3>
           <ul data-footer-contact>
+            <li>Calle Victoria 86, Málaga</li>
+            <li>Martes a domingo, 9:00 – 23:30</li>
+            <li>Lunes cerrado</li>
             <li><a href="tel:+34952006261" data-phone-link data-phone>952 00 62 61</a></li>
           </ul>
         </div>
       </div>
       <div class="site-footer__bottom">
-        <span>© <span data-year>2026</span> Fausto’s Grill</span>
+        <span>© <span data-year>2026</span> Fausto’s Tapas &amp; Grill</span>
         <a href="#top">Volver arriba</a>
       </div>
     </div>
   </footer>
 
-  <a class="fab" href="tel:+34952006261" data-fab aria-label="Llamar a Fausto's Grill">
+  <a class="fab" href="tel:+34952006261" data-fab aria-label="Llamar a Fausto's">
     <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>
   </a>
 

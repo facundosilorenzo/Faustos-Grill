@@ -601,3 +601,102 @@ button.photo img { transition: transform 600ms var(--ease-out), filter var(--t-s
 .menu__promo { margin-top: var(--s-4); padding: var(--s-5); background: var(--paper-deep); border-radius: var(--radius); }
 .menu__promo .menu__block-title { border-bottom-color: var(--ember); }
 .menu__promo .dish:last-child { border-bottom: 0; }
+
+/* ==========================================================================
+   Rediseño 2: estructura de casa de carnes (referencia: lacabreramalaga.es)
+   con la identidad de la carta impresa de Fausto's: palo seco negro,
+   mayúsculas y la sartén del logo.
+   ========================================================================== */
+:root {
+  --font-display: "Archivo", "Arial Narrow", system-ui, sans-serif;
+}
+h1, h2, .menu__block-title, .visit-sec__title {
+  font-family: var(--font-display);
+  font-weight: 800; font-stretch: 78%;
+  text-transform: uppercase; letter-spacing: 0.005em; line-height: 0.95;
+}
+h3, h4, .dish__name { font-family: var(--font-display); font-weight: 650; font-stretch: 90%; letter-spacing: 0; }
+.dish__name { font-size: var(--step-1); }
+.hero h1 { font-size: clamp(3.2rem, 1.8rem + 7vw, 8.5rem); max-width: none; letter-spacing: -0.005em; line-height: 0.88; }
+.hero h1 .sear { display: block; }
+.hero h1 em { font-weight: 800; }
+
+/* Logo tipográfico (basado en el de la carta) */
+.logo { display: inline-grid; justify-items: center; text-decoration: none; line-height: 1; color: inherit; }
+.logo__top { display: flex; align-items: center; gap: 0.35rem; font: 800 0.62rem/1 var(--font-display); letter-spacing: 0.12em; text-transform: uppercase; }
+.logo__pan { width: 1.5rem; height: 1rem; --pan-inner: var(--char); }
+.is-solid .logo__pan, .nav-open .logo__pan { --pan-inner: var(--paper); }
+.logo__name { font: 900 1.65rem/0.95 var(--font-display); font-stretch: 85%; text-transform: uppercase; letter-spacing: 0.01em; }
+.logo__sub { font: 700 0.5rem/1.4 var(--font-display); letter-spacing: 0.14em; text-transform: uppercase; }
+.site-header__bar { min-height: 5rem; }
+.nav__links a { text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.78rem; font-weight: 600; }
+@media (max-width: 64rem) and (min-width: 52.01rem) { .nav__links { gap: var(--s-4); } }
+@media (max-width: 52rem) {
+  .nav { inset: 5rem 0 auto 0; }
+  .nav__links a { text-transform: uppercase; font-family: var(--font-display); font-weight: 800; font-stretch: 80%; letter-spacing: 0.01em; font-size: var(--step-2); }
+}
+
+/* Buttons: uppercase, como en la referencia */
+.btn { text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.85rem; border-radius: 2px; min-height: 3.1rem; }
+
+/* Casa de carne */
+.statement { text-align: center; padding-block: var(--s-9); }
+.statement__inner { display: grid; justify-items: center; gap: var(--s-4); max-width: 44rem; }
+.statement__icon { width: 4rem; height: 2.5rem; color: var(--ember); --pan-inner: var(--paper); }
+.statement h2 { font-size: var(--step-4); }
+.statement__lede { font-family: var(--font-display); font-size: var(--step-1); font-weight: 600; font-stretch: 90%; }
+.statement p:last-child { color: var(--ink-soft); max-width: 60ch; }
+
+/* Destacados */
+.teaser__head { display: grid; justify-items: center; text-align: center; gap: var(--s-4); margin-bottom: var(--s-7); }
+.teaser__head h2 { font-size: var(--step-4); }
+.teaser__head h2 span, .about h2 span { color: var(--ember-hot); }
+.teaser__head p { color: var(--on-char-soft); max-width: 46ch; }
+.teaser__grid { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s-4); grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (min-width: 52rem) { .teaser__grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.teaser__photo { margin: 0; aspect-ratio: 4 / 5; }
+.teaser__name { margin-top: var(--s-3); font: 700 var(--step-0)/1.2 var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; text-align: center; }
+
+/* Reservas */
+.reserve__inner { display: grid; gap: var(--s-7); }
+@media (min-width: 52rem) { .reserve__inner { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); align-items: start; } }
+.reserve__text { display: grid; gap: var(--s-4); align-content: start; }
+.reserve__text h2 { font-size: var(--step-4); }
+.reserve__text p { color: var(--ink-soft); max-width: 42ch; }
+.reserve__phone { display: inline-flex; align-items: center; gap: var(--s-3); font: 800 var(--step-3)/1 var(--font-display); font-stretch: 85%; text-decoration: none; color: var(--ember); }
+.reserve__phone .icon { width: 0.8em; height: 0.8em; }
+.reserve__note { font-size: var(--step--1); }
+
+/* Sobre nosotros */
+.about__inner { display: grid; gap: var(--s-7); align-items: center; }
+@media (min-width: 52rem) { .about__inner { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } }
+.about__text { display: grid; gap: var(--s-4); justify-items: start; }
+.about__text h2 { font-size: var(--step-4); }
+.about__text p { color: var(--on-char-soft); max-width: 52ch; }
+.about__photo { margin: 0; aspect-ratio: 4 / 3; }
+
+/* Galería sobre papel */
+#fotos .photo { color: var(--on-char-soft); }
+
+/* Ven a visitarnos */
+.visit-sec { text-align: center; }
+.visit-sec__title { font-size: var(--step-4); margin-bottom: var(--s-7); }
+.visit-cols { display: grid; gap: var(--s-6); margin-bottom: var(--s-7); }
+@media (min-width: 52rem) { .visit-cols { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-7); } }
+.visit-col { display: grid; justify-items: center; align-content: start; gap: var(--s-3); }
+.visit-col > .icon { width: 1.8rem; height: 1.8rem; color: var(--ember); }
+.visit-col h3 { font: 800 var(--step-1)/1 var(--font-display); text-transform: uppercase; letter-spacing: 0.06em; }
+.visit-col address { font-style: normal; color: var(--ink-soft); }
+.visit-col .hours { max-width: 18rem; }
+.visit-col__note { color: var(--ink-soft); font-size: var(--step--1); }
+.visit-col .channels { width: 100%; max-width: 20rem; text-align: left; }
+.visit-col .channels a { padding-block: var(--s-3); }
+.visit-sec .map { min-height: 24rem; }
+
+/* Pie */
+.site-footer__top { align-items: start; }
+.logo--footer { justify-items: start; }
+.logo--footer .logo__pan { --pan-inner: var(--char); }
+.logo--footer .logo__name { font-size: 2.6rem; }
+.logo--footer .logo__top { font-size: 0.8rem; }
+.logo--footer .logo__sub { font-size: 0.62rem; }
