@@ -307,7 +307,13 @@
       $("[data-reviews-demo]").hidden = false;
     };
 
-    if (!g.apiKey || !g.placeId) return g.demo === false ? null : demo();
+    const featured = () => {
+      if (!g.featured || !g.featured.length) return false;
+      renderReviews(g.featured, { rating: g.rating, count: g.count });
+      return true;
+    };
+
+    if (!g.apiKey || !g.placeId) return featured() || (g.demo === false ? null : demo());
 
     // Carga diferida: sólo al acercarse a la sección
     const section = $("#resenas");
@@ -324,7 +330,7 @@
       if (place.googleMapsURI && link) link.href = place.googleMapsURI;
     }).catch((err) => {
       console.warn("[Fausto's] No se pudieron cargar las reseñas de Google:", err);
-      if (g.demo !== false) demo();
+      if (!featured() && g.demo !== false) demo();
     });
 
     if ("IntersectionObserver" in window) {
