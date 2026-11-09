@@ -309,9 +309,9 @@ a:hover { text-decoration-color: var(--ember); }
 .menu__tab[aria-selected="true"] { color: var(--ink); font-weight: 600; }
 .menu__tab:focus-visible { outline-offset: -4px; }
 .menu__indicator {
-  position: absolute; left: 0; bottom: -1px; height: 2px; width: 1px;
-  background: var(--ember); transform-origin: left center;
-  transition: transform var(--t-state) var(--ease-out);
+  position: absolute; left: 0; bottom: -1px; height: 2px; width: 0;
+  background: var(--ember);
+  transition: transform var(--t-state) var(--ease-out), width var(--t-state) var(--ease-out);
 }
 
 .menu__panel { display: grid; gap: var(--s-7); }

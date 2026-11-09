@@ -168,7 +168,11 @@
 
     const moveIndicator = (tab, instant) => {
       if (instant) indicator.style.transition = "none";
-      indicator.style.transform = `translateX(${tab.offsetLeft}px) scaleX(${tab.offsetWidth})`;
+      // Medido con getBoundingClientRect respecto a la fila (incluye su scroll),
+      // y con width real en vez de scaleX para que no se desvíe con zoom/DPI.
+      const t = tab.getBoundingClientRect(), l = list.getBoundingClientRect();
+      indicator.style.width = `${t.width}px`;
+      indicator.style.transform = `translateX(${t.left - l.left + list.scrollLeft}px)`;
       if (instant) { indicator.offsetWidth; indicator.style.transition = ""; }
     };
 
