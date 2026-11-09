@@ -313,7 +313,7 @@ a:hover { text-decoration-color: var(--ember); }
    navegador, zoom o desplazamiento de la fila. */
 .menu__tab { position: relative; }
 .menu__tab::after {
-  content: ""; position: absolute; left: var(--s-4); right: var(--s-4); bottom: -1px; height: 2px;
+  content: ""; position: absolute; left: var(--s-4); right: var(--s-4); bottom: 0; height: 3px; border-radius: 2px 2px 0 0;
   background: var(--ember); transform: scaleX(0); transform-origin: center;
   transition: transform var(--t-state) var(--ease-out);
 }
