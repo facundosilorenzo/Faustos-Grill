@@ -745,3 +745,12 @@ h3, h4, .dish__name { font-family: var(--font-display); font-weight: 650; font-s
 @media (prefers-reduced-motion: reduce) {
   .coverflow__item { transform: none; filter: none; }
 }
+
+/* Sello del restaurante al inicio */
+.hero__seal {
+  width: clamp(7rem, 24vw, 11rem); height: auto; border-radius: 50%;
+  box-shadow: 0 14px 40px -12px rgb(0 0 0 / 0.6);
+}
+.js .hero__seal { animation: seal-in 700ms var(--ease-out) 80ms both; }
+@keyframes seal-in { from { opacity: 0; transform: scale(0.94); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .js .hero__seal { animation: fade 400ms ease both; } }
