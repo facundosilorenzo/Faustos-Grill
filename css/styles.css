@@ -754,3 +754,64 @@ h3, h4, .dish__name { font-family: var(--font-display); font-weight: 650; font-s
 .js .hero__seal { animation: seal-in 700ms var(--ease-out) 80ms both; }
 @keyframes seal-in { from { opacity: 0; transform: scale(0.94); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .js .hero__seal { animation: fade 400ms ease both; } }
+
+/* ---------- Platos destacados: baraja de cartas ----------
+   Sin JS se ve la rejilla normal. Con JS (.is-ready) las fotos se apilan
+   en abanico; la de arriba se lanza hacia un lado y vuelve al fondo. */
+.deck__info { display: none; }
+.deck.is-ready { display: grid; gap: var(--s-7); align-items: center; }
+@media (min-width: 52rem) {
+  .deck.is-ready { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--s-8); }
+}
+.deck.is-ready .deck__cards {
+  display: block; position: relative;
+  width: min(78%, 21rem); aspect-ratio: 4 / 5; margin: var(--s-5) auto var(--s-3);
+  touch-action: pan-y; user-select: none; -webkit-user-select: none;
+  left: -1.6rem; /* centra el abanico */
+}
+.teaser { overflow-x: clip; }
+.deck.is-ready .deck__card {
+  --p: 0;
+  position: absolute; inset: 0;
+  transform:
+    translate(calc(var(--p) * 1.1rem), calc(var(--p) * -0.55rem))
+    rotate(calc(var(--p) * 4.5deg))
+    scale(calc(1 - var(--p) * 0.045));
+  transform-origin: 50% 90%;
+  filter: brightness(calc(1 - var(--p) * 0.22));
+  transition: transform 520ms var(--ease-out), filter 520ms var(--ease-out);
+}
+.deck.is-ready .deck__card .teaser__photo { height: 100%; aspect-ratio: auto; box-shadow: 0 22px 50px -20px rgb(0 0 0 / 0.75); outline: 1px solid rgb(255 255 255 / 0.06); outline-offset: -1px; }
+.deck.is-ready .deck__card .teaser__name { display: none; }
+.deck.is-ready .deck__card.is-top { cursor: grab; }
+.deck.is-ready .deck__card.is-dragging { cursor: grabbing; transition: none; }
+.deck.is-ready .deck__card.is-tossed { animation: deck-toss 640ms var(--ease-out) both; }
+.deck.is-ready .deck__card.is-drawn { animation: deck-draw 560ms var(--ease-out) both; }
+@keyframes deck-toss {
+  0%   { transform: translate(var(--sx, 0px), 0) rotate(var(--sr, 0deg)); z-index: 20; filter: none; }
+  42%  { transform: translate(calc(var(--dir, 1) * 108%), -6%) rotate(calc(var(--dir, 1) * 17deg)); z-index: 20; }
+  58%  { z-index: 0; }
+  100% { z-index: 0; }
+}
+@keyframes deck-draw {
+  0%   { transform: translate(calc(var(--dir, -1) * 108%), -6%) rotate(calc(var(--dir, -1) * 17deg)); z-index: 20; }
+  100% { z-index: 20; }
+}
+.deck__num { margin: 0; font: 800 var(--step-1)/1 var(--font-display); letter-spacing: 0.08em; color: var(--on-char-soft); font-variant-numeric: tabular-nums; }
+.deck__num span { color: var(--ember-hot); }
+.deck.is-ready .deck__info { display: grid; gap: var(--s-5); justify-items: center; text-align: center; }
+@media (min-width: 52rem) { .deck.is-ready .deck__info { justify-items: start; text-align: left; } }
+.deck__text { display: grid; gap: var(--s-3); min-height: 11.5rem; align-content: start; }
+.deck__name { font: 800 var(--step-3)/0.95 var(--font-display); font-stretch: 78%; text-transform: uppercase; }
+.deck__desc { margin: 0; color: var(--on-char-soft); max-width: 36ch; }
+.deck__price { margin: 0; font-weight: 600; color: var(--ember-hot); font-variant-numeric: tabular-nums lining-nums; }
+.deck__nav { display: flex; align-items: center; gap: var(--s-4); }
+.deck__dots { display: flex; gap: 6px; }
+.deck__dots i { width: 1.4rem; height: 3px; border-radius: 2px; background: var(--char-rule); transition: background-color var(--t-state) ease, width var(--t-state) var(--ease-out); }
+.deck__dots i.is-on { width: 2.4rem; background: var(--ember-hot); }
+.deck__hint { margin: 0; font-size: var(--step--1); color: var(--on-char-soft); }
+@media (prefers-reduced-motion: reduce) {
+  .deck.is-ready .deck__card { transition: filter 200ms ease; }
+  .deck.is-ready .deck__card.is-tossed, .deck.is-ready .deck__card.is-drawn { animation: fade 300ms ease both; }
+  .deck__dots i { transition: none; }
+}

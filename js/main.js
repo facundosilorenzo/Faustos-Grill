@@ -116,6 +116,109 @@
     update();
   }
 
+  /* ---------- Platos destacados: baraja que se lanza a un lado ---------- */
+  function initDeck() {
+    const root = $("[data-deck]");
+    if (!root) return;
+    const cards = $$(".deck__card", root);
+    const n = cards.length;
+    const text = $(".deck__text", root);
+    const dots = $$(".deck__dots i", root);
+    let top = 0;
+
+    const layout = () => {
+      cards.forEach((c, i) => {
+        const p = (i - top + n) % n;
+        c.style.setProperty("--p", p);
+        c.style.zIndex = String(n - p);
+        c.classList.toggle("is-top", p === 0);
+        c.setAttribute("aria-hidden", p === 0 ? "false" : "true");
+      });
+      const c = cards[top];
+      $("[data-deck-num]", root).textContent = String(top + 1).padStart(2, "0");
+      $("[data-deck-name]", root).textContent = $(".teaser__name", c).textContent;
+      $("[data-deck-desc]", root).textContent = c.dataset.desc;
+      $("[data-deck-price]", root).textContent = c.dataset.price;
+      dots.forEach((d, i) => d.classList.toggle("is-on", i === top));
+    };
+    const swapText = () => {
+      if (reduceMotion.matches || !text.animate) return;
+      text.animate(
+        [{ opacity: 0, transform: "translateY(10px)", filter: "blur(4px)" }, { opacity: 1, transform: "none", filter: "blur(0)" }],
+        { duration: 380, easing: "cubic-bezier(0.23, 1, 0.32, 1)" }
+      );
+    };
+    const play = (el, cls) => {
+      el.classList.remove("is-tossed", "is-drawn");
+      void el.offsetWidth; // reinicia la animación
+      el.classList.add(cls);
+      el.addEventListener("animationend", () => el.classList.remove(cls), { once: true });
+    };
+
+    const next = (dir = -1, sx = 0, sr = 0) => {
+      const out = cards[top];
+      out.style.setProperty("--dir", dir);
+      out.style.setProperty("--sx", sx + "px");
+      out.style.setProperty("--sr", sr + "deg");
+      top = (top + 1) % n;
+      layout();
+      play(out, "is-tossed");
+      swapText();
+    };
+    const prev = () => {
+      top = (top - 1 + n) % n;
+      const back = cards[top];
+      back.style.setProperty("--dir", -1);
+      layout();
+      play(back, "is-drawn");
+      swapText();
+    };
+
+    // Arrastrar la carta de arriba con el dedo o el ratón.
+    let drag = null;
+    root.addEventListener("pointerdown", (e) => {
+      const c = e.target.closest(".deck__card.is-top");
+      if (!c || e.button > 0) return;
+      drag = { c, x: e.clientX, y: e.clientY, dx: 0, moved: false, id: e.pointerId };
+    });
+    root.addEventListener("pointermove", (e) => {
+      if (!drag || e.pointerId !== drag.id) return;
+      const dx = e.clientX - drag.x, dy = e.clientY - drag.y;
+      if (!drag.moved) {
+        if (Math.abs(dx) < 6) return;
+        if (Math.abs(dy) > Math.abs(dx)) { drag = null; return; } // es scroll vertical
+        drag.moved = true;
+        drag.c.classList.add("is-dragging");
+        drag.c.setPointerCapture(e.pointerId);
+      }
+      drag.dx = dx;
+      drag.c.style.transform = `translate(${dx}px, ${Math.abs(dx) * -0.04}px) rotate(${dx / 16}deg)`;
+    });
+    const end = () => {
+      if (!drag) return;
+      const { c, dx, moved } = drag;
+      drag = null;
+      c.classList.remove("is-dragging");
+      c.style.transform = "";
+      if (!moved) { next(); return; } // un toque también pasa de plato
+      if (Math.abs(dx) > 70) next(Math.sign(dx), dx, dx / 16);
+    };
+    root.addEventListener("pointerup", end);
+    root.addEventListener("pointercancel", () => {
+      if (drag) { drag.c.classList.remove("is-dragging"); drag.c.style.transform = ""; drag = null; }
+    });
+
+    $("[data-deck-next]", root).addEventListener("click", () => next());
+    $("[data-deck-prev]", root).addEventListener("click", prev);
+    root.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight") { e.preventDefault(); next(); }
+      if (e.key === "ArrowLeft") { e.preventDefault(); prev(); }
+    });
+
+    root.classList.add("is-ready");
+    layout();
+  }
+
   /* ---------- Cabecera ---------- */
   function initHeader() {
     const header = $(".site-header");
@@ -539,6 +642,7 @@
   initHeader();
   initHours();
   initMenu();
+  initDeck();
   initCoverflow();
   initLightbox();
   initReviews();

@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..900&family=Hanken+Grotesk:wght@400;500;600&display=swap">
-  <link rel="stylesheet" href="css/styles.css?v=11">
+  <link rel="stylesheet" href="css/styles.css?v=12">
 
   <script>document.documentElement.classList.replace('no-js', 'js');</script>
 
@@ -141,24 +141,40 @@
           <p>Parrilla argentina, tapas de toda la vida y cocina non-stop de martes a domingo.</p>
           <a class="btn btn--ember" href="#carta">Ver el menú completo</a>
         </div>
-        <ul class="teaser__grid" role="list">
-          <li><figure class="photo teaser__photo">
+        <div class="deck" data-deck>
+        <ul class="teaser__grid deck__cards" role="list" aria-label="Platos destacados">
+          <li class="deck__card" data-desc="El corte estrella de la casa, a la brasa y al punto que pidas. Con patatas fritas o ensalada." data-price="29,00 €"><figure class="photo teaser__photo">
             <img src="assets/fotos/ojo-de-bife.jpg" alt="Ojo de bife a la parrilla" loading="lazy" data-photo>
             <span class="photo__fallback" aria-hidden="true"><strong>Ojo de bife</strong>ojo-de-bife.jpg</span>
           </figure><p class="teaser__name">Ojo de bife</p></li>
-          <li><figure class="photo teaser__photo">
+          <li class="deck__card" data-desc="Provolone fundido a la parrilla, con tomate y rúcula." data-price="11,00 €"><figure class="photo teaser__photo">
             <img src="assets/fotos/provoleta.jpg" alt="Provoleta a la parrilla" loading="lazy" data-photo>
             <span class="photo__fallback" aria-hidden="true"><strong>Provoleta</strong>provoleta.jpg</span>
           </figure><p class="teaser__name">Provoleta de la casa</p></li>
-          <li><figure class="photo teaser__photo">
+          <li class="deck__card" data-desc="Carne, cebolla y queso, espinaca y queso, jamón y queso o pollo." data-price="3,50 € la unidad"><figure class="photo teaser__photo">
             <img src="assets/fotos/empanadas.jpg" alt="Empanadas" loading="lazy" data-photo>
             <span class="photo__fallback" aria-hidden="true"><strong>Empanadas</strong>empanadas.jpg</span>
           </figure><p class="teaser__name">Empanadas</p></li>
-          <li><figure class="photo teaser__photo">
+          <li class="deck__card" data-desc="Dos cortes de carne, morcilla, chorizo, patatas fritas y ensalada mixta." data-price="65,00 € para 2 · 115,00 € para 4"><figure class="photo teaser__photo">
             <img src="assets/fotos/parrillada.jpg" alt="Parrillada para compartir" loading="lazy" data-photo>
             <span class="photo__fallback" aria-hidden="true"><strong>Parrillada</strong>parrillada.jpg</span>
           </figure><p class="teaser__name">Parrillada para compartir</p></li>
         </ul>
+        <div class="deck__info" aria-live="polite">
+          <p class="deck__num"><span data-deck-num>01</span> / 04</p>
+          <div class="deck__text">
+            <h3 class="deck__name" data-deck-name>Ojo de bife</h3>
+            <p class="deck__desc" data-deck-desc>El corte estrella de la casa, a la brasa y al punto que pidas. Con patatas fritas o ensalada.</p>
+            <p class="deck__price" data-deck-price>29,00 €</p>
+          </div>
+          <div class="deck__nav">
+            <button class="icon-btn" type="button" data-deck-prev><svg class="icon" aria-hidden="true"><use href="#i-left"/></svg><span class="visually-hidden">Plato anterior</span></button>
+            <span class="deck__dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+            <button class="icon-btn" type="button" data-deck-next><svg class="icon" aria-hidden="true"><use href="#i-right"/></svg><span class="visually-hidden">Plato siguiente</span></button>
+          </div>
+          <p class="deck__hint">Desliza la carta o tócala para ver el siguiente plato.</p>
+        </div>
+        </div>
       </div>
     </section>
 
@@ -1008,6 +1024,6 @@
   </a>
 
   <script src="js/config.js?v=8"></script>
-  <script src="js/main.js?v=10"></script>
+  <script src="js/main.js?v=12"></script>
 </body>
 </html>
