@@ -308,11 +308,17 @@ a:hover { text-decoration-color: var(--ember); }
 .menu__tab:hover { color: var(--ink); }
 .menu__tab[aria-selected="true"] { color: var(--ink); font-weight: 600; }
 .menu__tab:focus-visible { outline-offset: -4px; }
-.menu__indicator {
-  position: absolute; left: 0; bottom: -1px; height: 2px; width: 0;
-  background: var(--ember);
-  transition: transform var(--t-state) var(--ease-out), width var(--t-state) var(--ease-out);
+.menu__indicator { display: none; }
+/* La línea va pegada a la propia pestaña activa: siempre alineada, en cualquier
+   navegador, zoom o desplazamiento de la fila. */
+.menu__tab { position: relative; }
+.menu__tab::after {
+  content: ""; position: absolute; left: var(--s-4); right: var(--s-4); bottom: -1px; height: 2px;
+  background: var(--ember); transform: scaleX(0); transform-origin: center;
+  transition: transform var(--t-state) var(--ease-out);
 }
+.menu__tab[aria-selected="true"]::after { transform: scaleX(1); }
+@media (prefers-reduced-motion: reduce) { .menu__tab::after { transition: none; } }
 
 .menu__panel { display: grid; gap: var(--s-7); }
 .menu__panel[hidden] { display: none; }

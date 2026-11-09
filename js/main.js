@@ -163,18 +163,8 @@
     const list = $(".menu__tabs");
     if (!list) return;
     const tabs = $$('[role="tab"]', list);
-    const indicator = $(".menu__indicator", list);
     const panels = tabs.map((t) => document.getElementById(t.getAttribute("aria-controls")));
 
-    const moveIndicator = (tab, instant) => {
-      if (instant) indicator.style.transition = "none";
-      // Medido con getBoundingClientRect respecto a la fila (incluye su scroll),
-      // y con width real en vez de scaleX para que no se desvíe con zoom/DPI.
-      const t = tab.getBoundingClientRect(), l = list.getBoundingClientRect();
-      indicator.style.width = `${t.width}px`;
-      indicator.style.transform = `translateX(${t.left - l.left + list.scrollLeft}px)`;
-      if (instant) { indicator.offsetWidth; indicator.style.transition = ""; }
-    };
 
     const select = (tab, { focus = false, instant = false } = {}) => {
       tabs.forEach((t, i) => {
@@ -183,10 +173,10 @@
         t.tabIndex = on ? 0 : -1;
         panels[i].hidden = !on;
       });
-      moveIndicator(tab, instant);
       if (focus) tab.focus();
       // Desplaza sólo la fila de pestañas (nunca la página) para que la activa quede visible
-      const l = tab.offsetLeft, r = l + tab.offsetWidth;
+      const tr = tab.getBoundingClientRect(), lr = list.getBoundingClientRect();
+      const l = tr.left - lr.left + list.scrollLeft, r = l + tr.width;
       if (l < list.scrollLeft || r > list.scrollLeft + list.clientWidth) {
         list.scrollTo({ left: l - 16, behavior: instant || reduceMotion.matches ? "auto" : "smooth" });
       }
@@ -204,8 +194,6 @@
     });
 
     select(tabs.find((t) => t.getAttribute("aria-selected") === "true") || tabs[0], { instant: true });
-    new ResizeObserver(() => moveIndicator(tabs.find((t) => t.tabIndex === 0), true)).observe(list);
-    document.fonts && document.fonts.ready.then(() => moveIndicator(tabs.find((t) => t.tabIndex === 0), true));
   }
 
   /* ---------- Galería + visor ---------- */
