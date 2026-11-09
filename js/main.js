@@ -112,7 +112,7 @@
     $("[data-cf-prev]", root).addEventListener("click", () => go(active - 1));
     $("[data-cf-next]", root).addEventListener("click", () => go(active + 1));
 
-    go(Math.floor((items.length - 1) / 2), true);
+    go(0, true);
     update();
   }
 
