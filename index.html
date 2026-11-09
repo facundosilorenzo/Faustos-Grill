@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..900&family=Hanken+Grotesk:wght@400;500;600&display=swap">
-  <link rel="stylesheet" href="css/styles.css?v=9">
+  <link rel="stylesheet" href="css/styles.css?v=10">
 
   <script>document.documentElement.classList.replace('no-js', 'js');</script>
 
@@ -826,36 +826,43 @@
           <h2 id="fotos-title">Galería</h2>
           <p>Lo que sale de nuestra cocina, tal cual llega a la mesa.</p>
         </div>
-        <ul class="gallery" role="list" style="list-style:none;margin:0;padding:0">
-          <li class="gallery__item--big"><button class="photo" type="button" data-lightbox>
+        <div class="coverflow" data-coverflow>
+        <ul class="coverflow__track" role="list" aria-label="Fotos de nuestros platos">
+          <li class="coverflow__item"><button class="photo" type="button" data-lightbox>
             <img src="assets/fotos/ojo-de-bife.jpg" alt="Ojo de bife a la parrilla" loading="lazy" data-photo>
             <span class="photo__fallback" aria-hidden="true"><strong>Ojo de bife</strong>ojo-de-bife.jpg</span>
             <span class="photo__caption">Ojo de bife</span></button></li>
-          <li class="gallery__item--tall"><button class="photo" type="button" data-lightbox>
+          <li class="coverflow__item"><button class="photo" type="button" data-lightbox>
             <img src="assets/fotos/parrilla.jpg" alt="La parrilla encendida con brasas" loading="lazy" data-photo>
             <span class="photo__fallback" aria-hidden="true"><strong>La parrilla</strong>parrilla.jpg</span>
             <span class="photo__caption">Nuestra parrilla</span></button></li>
-          <li><button class="photo" type="button" data-lightbox>
+          <li class="coverflow__item"><button class="photo" type="button" data-lightbox>
             <img src="assets/fotos/provoleta.jpg" alt="Provoleta fundida a la brasa" loading="lazy" data-photo>
             <span class="photo__fallback" aria-hidden="true"><strong>Provoleta</strong>provoleta.jpg</span>
             <span class="photo__caption">Provoleta a la brasa</span></button></li>
-          <li><button class="photo" type="button" data-lightbox>
+          <li class="coverflow__item"><button class="photo" type="button" data-lightbox>
             <img src="assets/fotos/empanadas.jpg" alt="Empanadas criollas recién horneadas" loading="lazy" data-photo>
             <span class="photo__fallback" aria-hidden="true"><strong>Empanadas</strong>empanadas.jpg</span>
             <span class="photo__caption">Empanadas criollas</span></button></li>
-          <li class="gallery__item--wide"><button class="photo" type="button" data-lightbox>
+          <li class="coverflow__item"><button class="photo" type="button" data-lightbox>
             <img src="assets/fotos/parrillada.jpg" alt="Parrillada para dos con varios cortes" loading="lazy" data-photo>
             <span class="photo__fallback" aria-hidden="true"><strong>Parrillada</strong>parrillada.jpg</span>
             <span class="photo__caption">Parrillada para compartir</span></button></li>
-          <li><button class="photo" type="button" data-lightbox>
+          <li class="coverflow__item"><button class="photo" type="button" data-lightbox>
             <img src="assets/fotos/salon.jpg" alt="El salón del restaurante" loading="lazy" data-photo>
             <span class="photo__fallback" aria-hidden="true"><strong>El salón</strong>salon.jpg</span>
             <span class="photo__caption">El salón</span></button></li>
-          <li><button class="photo" type="button" data-lightbox>
+          <li class="coverflow__item"><button class="photo" type="button" data-lightbox>
             <img src="assets/fotos/postre.jpg" alt="Panqueque" loading="lazy" data-photo>
             <span class="photo__fallback" aria-hidden="true"><strong>Panqueque</strong>postre.jpg</span>
             <span class="photo__caption">Panqueque</span></button></li>
         </ul>
+        <div class="coverflow__nav">
+          <button class="icon-btn" type="button" data-cf-prev><svg class="icon" aria-hidden="true"><use href="#i-left"/></svg><span class="visually-hidden">Foto anterior</span></button>
+          <p class="coverflow__count" aria-live="polite"><span data-cf-now>1</span> / <span data-cf-total>7</span></p>
+          <button class="icon-btn" type="button" data-cf-next><svg class="icon" aria-hidden="true"><use href="#i-right"/></svg><span class="visually-hidden">Foto siguiente</span></button>
+        </div>
+        </div>
       </div>
     </section>
 
@@ -1000,6 +1007,6 @@
   </a>
 
   <script src="js/config.js?v=8"></script>
-  <script src="js/main.js?v=8"></script>
+  <script src="js/main.js?v=10"></script>
 </body>
 </html>

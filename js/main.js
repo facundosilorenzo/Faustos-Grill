@@ -59,6 +59,63 @@
     });
   }
 
+  /* ---------- Galería: carrusel con la foto central enfocada ---------- */
+  function initCoverflow() {
+    const root = $("[data-coverflow]");
+    if (!root) return;
+    const track = $(".coverflow__track", root);
+    const items = $$(".coverflow__item", root);
+    const now = $("[data-cf-now]", root);
+    $("[data-cf-total]", root).textContent = items.length;
+    let active = 0, frame = 0;
+
+    const update = () => {
+      frame = 0;
+      const mid = track.getBoundingClientRect().left + track.clientWidth / 2;
+      let best = Infinity;
+      items.forEach((li, i) => {
+        const r = li.getBoundingClientRect();
+        const d = (r.left + r.width / 2 - mid) / (r.width || 1);
+        const c = Math.max(-1, Math.min(1, d));
+        li.style.setProperty("--r", c.toFixed(3));
+        li.style.setProperty("--a", Math.abs(c).toFixed(3));
+        li.style.zIndex = String(100 - Math.round(Math.abs(d) * 10));
+        if (Math.abs(d) < best) { best = Math.abs(d); active = i; }
+      });
+      items.forEach((li, i) => li.classList.toggle("is-active", i === active));
+      now.textContent = active + 1;
+    };
+    const queue = () => { if (!frame) frame = requestAnimationFrame(update); };
+
+    const go = (i, instant) => {
+      i = Math.max(0, Math.min(items.length - 1, i));
+      const li = items[i];
+      const left = li.offsetLeft + li.offsetWidth / 2 - track.clientWidth / 2;
+      track.scrollTo({ left, behavior: instant || reduceMotion.matches ? "auto" : "smooth" });
+    };
+
+    track.addEventListener("scroll", queue, { passive: true });
+    addEventListener("resize", queue);
+    // Tocar una foto lateral la trae al centro; la del centro abre la ampliación.
+    track.addEventListener("click", (e) => {
+      const li = e.target.closest(".coverflow__item");
+      if (!li || li.classList.contains("is-active")) return;
+      e.stopPropagation();
+      go(items.indexOf(li));
+    }, true);
+    track.addEventListener("keydown", (e) => {
+      if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+      e.preventDefault();
+      const n = active + (e.key === "ArrowRight" ? 1 : -1);
+      if (items[n]) { go(n, true); $("button", items[n]).focus({ preventScroll: true }); }
+    });
+    $("[data-cf-prev]", root).addEventListener("click", () => go(active - 1));
+    $("[data-cf-next]", root).addEventListener("click", () => go(active + 1));
+
+    go(Math.floor((items.length - 1) / 2), true);
+    update();
+  }
+
   /* ---------- Cabecera ---------- */
   function initHeader() {
     const header = $(".site-header");
@@ -482,6 +539,7 @@
   initHeader();
   initHours();
   initMenu();
+  initCoverflow();
   initLightbox();
   initReviews();
   initReserve();
