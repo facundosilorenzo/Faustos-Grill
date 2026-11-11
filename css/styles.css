@@ -815,3 +815,7 @@ h3, h4, .dish__name { font-family: var(--font-display); font-weight: 650; font-s
   .deck.is-ready .deck__card.is-tossed, .deck.is-ready .deck__card.is-drawn { animation: fade 300ms ease both; }
   .deck__dots i { transition: none; }
 }
+
+/* Con la foto cargada, el recuadro provisional queda debajo y no se ve */
+.photo img { z-index: 1; }
+.photo__caption { z-index: 2; }
