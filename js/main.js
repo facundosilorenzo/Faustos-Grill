@@ -54,8 +54,20 @@
   function initPhotos() {
     $$("img[data-photo]").forEach((img) => {
       const miss = () => img.classList.add("is-missing");
-      if (img.complete && img.naturalWidth === 0) miss();
-      else img.addEventListener("error", miss, { once: true });
+      // En la galería, cada tarjeta toma la forma de su foto: se ve entera, sin recortes.
+      const fit = () => {
+        const li = img.closest(".coverflow__item");
+        if (li && img.naturalWidth) {
+          li.style.setProperty("--ar", img.naturalWidth + " / " + img.naturalHeight);
+          li.style.setProperty("--arn", (img.naturalWidth / img.naturalHeight).toFixed(4));
+          dispatchEvent(new Event("photofit"));
+        }
+      };
+      if (img.complete) { if (img.naturalWidth === 0) miss(); else fit(); }
+      else {
+        img.addEventListener("error", miss, { once: true });
+        img.addEventListener("load", fit, { once: true });
+      }
     });
   }
 
@@ -77,8 +89,11 @@
         const r = li.getBoundingClientRect();
         const d = (r.left + r.width / 2 - mid) / (r.width || 1);
         const c = Math.max(-1, Math.min(1, d));
-        li.style.setProperty("--r", c.toFixed(3));
-        li.style.setProperty("--a", Math.abs(c).toFixed(3));
+        // La foto del centro queda sin transformar para que se vea nítida.
+        const flat = Math.abs(c) < 0.03;
+        li.style.setProperty("--r", flat ? 0 : c.toFixed(3));
+        li.style.setProperty("--a", flat ? 0 : Math.abs(c).toFixed(3));
+        li.classList.toggle("is-flat", flat);
         li.style.zIndex = String(100 - Math.round(Math.abs(d) * 10));
         if (Math.abs(d) < best) { best = Math.abs(d); active = i; }
       });
@@ -94,8 +109,16 @@
       track.scrollTo({ left, behavior: instant || reduceMotion.matches ? "auto" : "smooth" });
     };
 
+    const pad = () => {
+      const first = items[0].offsetWidth, last = items[items.length - 1].offsetWidth;
+      track.style.paddingLeft = Math.max(0, (track.clientWidth - first) / 2) + "px";
+      track.style.paddingRight = Math.max(0, (track.clientWidth - last) / 2) + "px";
+      queue();
+    };
     track.addEventListener("scroll", queue, { passive: true });
-    addEventListener("resize", queue);
+    addEventListener("resize", pad);
+    addEventListener("photofit", () => { pad(); go(active, true); });
+    pad();
     // Tocar una foto lateral la trae al centro; la del centro abre la ampliación.
     track.addEventListener("click", (e) => {
       const li = e.target.closest(".coverflow__item");

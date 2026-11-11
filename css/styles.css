@@ -712,7 +712,7 @@ h3, h4, .dish__name { font-family: var(--font-display); font-weight: 650; font-s
    giran hacia atrás. --r (-1…1) y --a (0…1) los calcula main.js al hacer
    scroll; sin JS queda una fila normal con scroll-snap. */
 #fotos { overflow-x: clip; }
-.coverflow { --card: clamp(13.5rem, 62vw, 21rem); margin-inline: calc(50% - 50vw); }
+.coverflow { --card: clamp(13.5rem, 62vw, 21rem); --h: clamp(16.5rem, 78vw, 26rem); margin-inline: calc(50% - 50vw); }
 .coverflow__track {
   list-style: none; margin: 0;
   display: flex; gap: var(--s-2);
@@ -723,14 +723,14 @@ h3, h4, .dish__name { font-family: var(--font-display); font-weight: 650; font-s
 }
 .coverflow__track::-webkit-scrollbar { display: none; }
 .coverflow__item {
-  flex: none; width: var(--card); aspect-ratio: 4 / 5;
+  flex: none; width: min(calc(var(--h) * var(--arn, 0.8)), 86vw); aspect-ratio: var(--ar, 4 / 5); align-self: center;
   scroll-snap-align: center;
   transform:
     rotateY(calc(var(--r, 0) * -42deg))
     scale(calc(1 - var(--a, 0) * 0.16));
   filter: brightness(calc(1 - var(--a, 0) * 0.35));
-  will-change: transform;
 }
+.coverflow__item.is-flat { transform: none; filter: none; }
 .coverflow__item .photo { box-shadow: 0 18px 40px -18px rgb(22 17 14 / 0.55); }
 .coverflow__item .photo__caption { opacity: 1; transform: none; }
 .coverflow__item:not(.is-active) .photo { cursor: pointer; }
@@ -819,3 +819,10 @@ h3, h4, .dish__name { font-family: var(--font-display); font-weight: 650; font-s
 /* Con la foto cargada, el recuadro provisional queda debajo y no se ve */
 .photo img { z-index: 1; }
 .photo__caption { z-index: 2; }
+
+/* Fotos enteras, tal como llegan: sin recortes ni zoom */
+.photo img { object-fit: contain; }
+.photo:has(img:not(.is-missing)) { background: var(--char); }
+@media (hover: hover) and (pointer: fine) { button.photo:hover img { transform: none; } }
+.coverflow__track { align-items: center; }
+.photo:has(img:not(.is-missing)) .photo__fallback { display: none; }
