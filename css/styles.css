@@ -826,3 +826,6 @@ h3, h4, .dish__name { font-family: var(--font-display); font-weight: 650; font-s
 @media (hover: hover) and (pointer: fine) { button.photo:hover img { transform: none; } }
 .coverflow__track { align-items: center; }
 .photo:has(img:not(.is-missing)) .photo__fallback { display: none; }
+
+/* Que arrastrar la foto mueva la carta y no la imagen del navegador */
+.deck__card img { pointer-events: none; -webkit-user-drag: none; user-select: none; }
