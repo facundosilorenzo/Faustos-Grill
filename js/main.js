@@ -429,14 +429,42 @@
     return `<span class="stars" role="img" aria-label="${n} de 5 estrellas">${html}</span>`;
   };
 
+  /* Avatares ilustrados (flores y paisajes) para quien no tiene foto */
+  const AVATARS = [
+    // Atardecer en el mar
+    '<rect width="40" height="40" fill="#f6b26b"/><rect y="18" width="40" height="22" fill="#e8743b"/><circle cx="20" cy="24" r="8" fill="#ffe08a"/><rect y="25" width="40" height="15" fill="#2f6f8f"/><path d="M6 29h8M24 32h10M12 35h7" stroke="#9fd0e6" stroke-width="1.4" stroke-linecap="round"/>',
+    // Montañas nevadas
+    '<rect width="40" height="40" fill="#bfe3f2"/><circle cx="30" cy="10" r="4" fill="#fff4c2"/><path d="M-2 34 13 14l9 11 6-7 14 16z" fill="#4c6a7d"/><path d="m13 14-4 5 4-1 3 2 2-2z" fill="#fff"/><path d="m28 18-3 3 3-.5 2 1z" fill="#fff"/><rect y="32" width="40" height="8" fill="#5e9c5a"/>',
+    // Girasol
+    '<rect width="40" height="40" fill="#7cc2e8"/><path d="M20 24v16" stroke="#3f8a3a" stroke-width="2.5"/><path d="M20 33c-5-1-7-4-7-4s4-1 7 2" fill="#4f9d47"/><g fill="#ffc531"><ellipse cx="20" cy="9" rx="3" ry="6"/><ellipse cx="20" cy="27" rx="3" ry="6"/><ellipse cx="11" cy="18" rx="6" ry="3"/><ellipse cx="29" cy="18" rx="6" ry="3"/><ellipse cx="13.6" cy="11.6" rx="3" ry="6" transform="rotate(-45 13.6 11.6)"/><ellipse cx="26.4" cy="24.4" rx="3" ry="6" transform="rotate(-45 26.4 24.4)"/><ellipse cx="26.4" cy="11.6" rx="3" ry="6" transform="rotate(45 26.4 11.6)"/><ellipse cx="13.6" cy="24.4" rx="3" ry="6" transform="rotate(45 13.6 24.4)"/></g><circle cx="20" cy="18" r="5.5" fill="#6b3d1e"/>',
+    // Margarita
+    '<rect width="40" height="40" fill="#cfe8b8"/><g fill="#fff"><ellipse cx="20" cy="10" rx="3.2" ry="7"/><ellipse cx="20" cy="30" rx="3.2" ry="7"/><ellipse cx="10" cy="20" rx="7" ry="3.2"/><ellipse cx="30" cy="20" rx="7" ry="3.2"/><ellipse cx="13" cy="13" rx="3.2" ry="7" transform="rotate(-45 13 13)"/><ellipse cx="27" cy="27" rx="3.2" ry="7" transform="rotate(-45 27 27)"/><ellipse cx="27" cy="13" rx="3.2" ry="7" transform="rotate(45 27 13)"/><ellipse cx="13" cy="27" rx="3.2" ry="7" transform="rotate(45 13 27)"/></g><circle cx="20" cy="20" r="5" fill="#f4c03a"/>',
+    // Tulipanes
+    '<rect width="40" height="40" fill="#fde2e4"/><path d="M14 22v18M26 20v20" stroke="#3f8a3a" stroke-width="2"/><path d="M8 13c0 6 3 9 6 9s6-3 6-9l-3 3-3-5-3 5z" fill="#e5484d"/><path d="M20 11c0 6 3 9 6 9s6-3 6-9l-3 3-3-5-3 5z" fill="#f59e0b"/><path d="M26 34c4-1 6-5 6-5s-5 0-6 3M14 33c-4-1-6-4-6-4s5 0 6 3" fill="#4f9d47"/>',
+    // Noche con luna
+    '<rect width="40" height="40" fill="#1f2a48"/><circle cx="27" cy="12" r="6" fill="#f7f1c9"/><circle cx="30" cy="10" r="5.5" fill="#1f2a48"/><g fill="#fff"><circle cx="9" cy="9" r=".9"/><circle cx="15" cy="16" r=".6"/><circle cx="34" cy="22" r=".7"/><circle cx="6" cy="20" r=".6"/></g><path d="M0 32c8-5 14-5 20-2s13 2 20-1v11H0z" fill="#2e4a3a"/>',
+    // Campo de lavanda
+    '<rect width="40" height="40" fill="#ffd7a8"/><circle cx="20" cy="17" r="6" fill="#fff1c9"/><rect y="22" width="40" height="18" fill="#8e6cc0"/><path d="M4 40 12 22M14 40l4-18M24 40l-2-18M34 40l-6-18" stroke="#6a4a9c" stroke-width="2.2"/>',
+  ];
+  const avatarFor = (name) => {
+    let h = 0;
+    for (const ch of name || "") h = (h * 31 + ch.charCodeAt(0)) >>> 0;
+    return `<span class="review__avatar review__avatar--art" aria-hidden="true"><svg viewBox="0 0 40 40">${AVATARS[h % AVATARS.length]}</svg></span>`;
+  };
+
   function renderReviews(reviews, summary) {
     const list = $("[data-reviews]");
     list.innerHTML = "";
+    const used = new Set();
     reviews.forEach((r) => {
       const li = document.createElement("li");
       li.className = "review";
+      // Ilustración distinta para cada reseña de la lista
+      let art = avatarFor(r.author);
+      for (let k = 0; used.has(art) && k < AVATARS.length; k++) art = avatarFor((r.author || "") + k);
+      used.add(art);
       li.innerHTML = `${stars(r.rating)}<blockquote><p></p></blockquote>
-        <footer>${r.photo ? `<img class="review__avatar" src="${r.photo}" alt="" loading="lazy" referrerpolicy="no-referrer">` : '<span class="review__avatar" aria-hidden="true"></span>'}
+        <footer>${r.photo ? `<img class="review__avatar" src="${r.photo}" alt="" loading="lazy" referrerpolicy="no-referrer">` : art}
         <span><span class="review__name"></span><span class="review__when"></span></span></footer>`;
       $("blockquote p", li).textContent = r.text;
       $(".review__name", li).textContent = r.author;

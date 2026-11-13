@@ -829,3 +829,8 @@ h3, h4, .dish__name { font-family: var(--font-display); font-weight: 650; font-s
 
 /* Que arrastrar la foto mueva la carta y no la imagen del navegador */
 .deck__card img { pointer-events: none; -webkit-user-drag: none; user-select: none; }
+
+/* Avatares ilustrados en reseñas */
+.review__avatar { width: 2.75rem; height: 2.75rem; }
+.review__avatar--art { display: block; overflow: hidden; box-shadow: 0 0 0 2px var(--char-rule); }
+.review__avatar--art svg { display: block; width: 100%; height: 100%; }
